@@ -12,13 +12,14 @@ import java.net.URLEncoder;
 public class LineNotify {
 
 	    public static void main(String[] args) {
-	        String トークン = "mDB3HoDS7yJhLF6D0FSWB7AxzHCZM6JJdO2qN330DPB";
-	        LineNotify lineNotify = new LineNotify(トークン);
-	        lineNotify.notify("テスト");
+	        String トークン = "mDB3HoDS7yJhLF6D0FSWB7AxzHCZM6JJdO2qN330DPB";	//トークンの
+	        LineNotify lineNotify = new LineNotify(トークン);		//インスタンスの生成
+	        lineNotify.notify("テスト");	//通知内容
 	    }
 
 	    private final String token;
 
+	    //コンストラクト
 	    public LineNotify(String token) {
 	        this.token = token;
 	    }
@@ -26,7 +27,8 @@ public class LineNotify {
 	    public void notify(String message) {
 	        HttpURLConnection connection = null;
 	        try {
-	            URL url = new URL("https://notify-api.line.me/api/notify");
+	            URL url = new URL("https://notify-api.line.me/api/notify");		//Line NotifyのURL
+	            //コネクションの設定
 	            connection = (HttpURLConnection) url.openConnection();
 	            connection.setDoOutput(true);
 	            connection.setRequestMethod("POST");
@@ -45,7 +47,6 @@ public class LineNotify {
 
 	        } finally {
 	            if (connection != null) {
-	            	System.out.println("通信に失敗しました");
 	                connection.disconnect();
 	            }
 	        }
