@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>入力画面</title>
+    <style>
+        .disptable {
+            display: table;
+        }
+        
+        .disprow {
+            display: table-row;
+        }
+        
+        .dispcell {
+            display: table-cell;
+        }
+        
+        .solidlineandcenterdiv {
+            border-style: solid;
+            padding-right: 5px;
+            padding-left: 5px;
+            margin-right: 33%;
+            margin-left: 33%;
+        }
+        
+        .left {
+            float: left;
+            margin: auto;
+        }
+        
+        .right {
+            float: right;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="right"></div>
+    <div align="center">
+        <h1>家計データ入力</h1>
+        <br>
+        <br>
+        <br>
+        <div class="disptable">
+            <div class="disprow">
+                <div class="dispcell"><button type="button">支出</button></div>
+                <div class="dispcell"><pre>    </pre></div>
+                <div class="dispcell"><pre>    </pre></div>
+                <div class="dispcell"><pre>    </pre></div>
+                <div class="dispcell"><button type="button">収入</button></div>
+            </div>
+        </div>
+        <p>
+            <form>
+                <div class="solidlineandcenterdiv">
+                    <p><label>給料</label>
+                        <input></input><br></p>
+                    <p><label>その他</label>
+                        <input></input><br></p>
+                </div>
+                <div class="disptable">
+                    <div class="disprow">
+                        <div class="dispcell"><button type="button">登録</button></div>
+                        <div class="dispcell"><pre>    </pre></div>
+                        <div class="dispcell"><pre>    </pre></div>
+                        <div class="dispcell"><pre>    </pre></div>
+                        <div class="dispcell"><button type="button">戻る</button></div>
+                    </div>
+                </div>
+            </form>
+        </p>
+
+    </div>
+    <div class="right"></div>
+</body>
+
+</html>
