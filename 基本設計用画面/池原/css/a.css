@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+body {
+  text-align: center;
+	display: block;
+}
+
+a{
+
+	font-size:20px;
+  	line-height: 3em;
+
+}
+
+p{
+
+	text-align: right;
+	display: inline-block;
+
+}
