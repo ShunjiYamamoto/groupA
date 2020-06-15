@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <title>入力画面</title>
     <style>
+        label {
+            margin-right: 20px;
+        }
+        
         .disptable {
             display: table;
         }
@@ -25,20 +29,13 @@
             margin-left: 33%;
         }
         
-        .left {
-            float: left;
-            margin: auto;
-        }
-        
-        .right {
-            float: right;
-            margin: auto;
+        div.solidlineandcenterdiv p {
+            text-align: left;
         }
     </style>
 </head>
 
 <body>
-    <div class="right"></div>
     <div align="center">
         <h1>家計データ入力</h1>
         <br>
@@ -47,30 +44,23 @@
         <div class="disptable">
             <div class="disprow">
                 <div class="dispcell"><button type="button">支出</button></div>
-                <div class="dispcell"><pre>    </pre></div>
-                <div class="dispcell"><pre>    </pre></div>
-                <div class="dispcell"><pre>    </pre></div>
+                <div class="dispcell"><pre>            </pre></div>
                 <div class="dispcell"><button type="button">収入</button></div>
             </div>
         </div>
         <p>
             <form>
                 <div class="solidlineandcenterdiv">
-                    <p><label>固定費</label>
-                        <input></input><br></p>
-                    <p><label>通信費</label>
-                        <input></input><br></p>
-                    <p><label>被服費</label>
-                        <input></input><br></p>
-                    <p><label>光熱費</label>
-                        <input></input><br></p>
+                    <p><label>日付</label><input type="date"></input><br></p>
+                    <p><label>固定費</label><input type="number"></input><br></p>
+                    <p><label>通信費</label><input type="number"></input><br></p>
+                    <p><label>被服費</label><input type="number"></input><br></p>
+                    <p><label>光熱費</label><input type="number"></input><br></p>
                 </div>
                 <div class="disptable">
                     <div class="disprow">
                         <div class="dispcell"><button type="button">登録</button></div>
-                        <div class="dispcell"><pre>    </pre></div>
-                        <div class="dispcell"><pre>    </pre></div>
-                        <div class="dispcell"><pre>    </pre></div>
+                        <div class="dispcell"><pre>            </pre></div>
                         <div class="dispcell"><button type="button">戻る</button></div>
                     </div>
                 </div>

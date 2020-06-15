@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <title>入力画面</title>
     <style>
+        label {
+            margin-right: 20px;
+        }
+        
         .disptable {
             display: table;
         }
@@ -25,20 +29,13 @@
             margin-left: 33%;
         }
         
-        .left {
-            float: left;
-            margin: auto;
-        }
-        
-        .right {
-            float: right;
-            margin: auto;
+        div.solidlineandcenterdiv p {
+            text-align: left;
         }
     </style>
 </head>
 
 <body>
-    <div class="right"></div>
     <div align="center">
         <h1>家計データ入力</h1>
         <br>
@@ -56,10 +53,9 @@
         <p>
             <form>
                 <div class="solidlineandcenterdiv">
-                    <p><label>給料</label>
-                        <input></input><br></p>
-                    <p><label>その他</label>
-                        <input></input><br></p>
+                    <p><label>日付</label><input type="date"></input><br></p>
+                    <p><label>給料</label><input></input><br></p>
+                    <p><label>その他</label><input></input><br></p>
                 </div>
                 <div class="disptable">
                     <div class="disprow">
@@ -74,7 +70,6 @@
         </p>
 
     </div>
-    <div class="right"></div>
 </body>
 
 </html>
