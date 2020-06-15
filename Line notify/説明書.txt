@@ -1,0 +1,3 @@
+LineNofity.java
+
+JavaでLine Notifyを通して通知を送信するプログラム
