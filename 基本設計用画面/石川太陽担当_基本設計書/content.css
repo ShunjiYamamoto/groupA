@@ -1,0 +1,9 @@
+
+body {
+    text-align: center;
+      display: block;
+  }
+
+.table, .text{
+  display: inline-block;
+}
