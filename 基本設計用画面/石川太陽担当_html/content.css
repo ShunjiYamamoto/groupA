@@ -7,3 +7,7 @@ body {
 .table, .text{
   display: inline-block;
 }
+
+.back{
+  margin-right: 300px;
+}
