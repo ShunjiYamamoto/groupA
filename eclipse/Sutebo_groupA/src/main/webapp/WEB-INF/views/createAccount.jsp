@@ -19,5 +19,61 @@
     <title>アカウント作成</title>
 <body>
 
+   <div class=”bg-opacity”>
+
+        <div id="header">
+            <p class="systemNameTitle"><span id="systemName">スーテェー簿</span></p>
+        </div>
+
+        <h2>アカウント作成</h2>
+
+        <div class="main">
+
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>※すでに使われているユーザーIDです。</strong>
+            </div>
+
+            <div class="errorMsg">
+
+                ※すでに使われているユーザーIDです。<br>
+
+            </div>
+
+            <form:form action="" method="post" modelAttribute="">
+
+                <fieldset>
+
+                    <ul>
+
+                        <div class="inputForm">
+
+                            <li class="userId">
+                                <label key="userId">ユーザーID：</label>
+                                <!-- placeholderは消してください。 -->
+                                <input id="userId" type="text" size="25" placeholder="12345678901234567890">
+                            </li>
+                            <li class="userName">
+                                <label key="userName">ユーザー名：</label>
+                                <input id="userName" type="text" size="25">
+                            </li>
+                            <li class="password">
+                                <label for="password">パスワード：</label>
+                                <input id="password" type="password" size="25">
+                            </li>
+
+                        </div>
+
+                        <li><button class="btn btn-primary" id="mainBtn">登録</button>
+                            <a href="index" id class="btn btn-primary" id="backBtn">戻る</a>
+                        </li>
+                    </ul>
+
+                </fieldset>
+
+            </form:form>
+        </div>
+    </div>
+
 </body>
 </html>
