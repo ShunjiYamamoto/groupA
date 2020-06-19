@@ -15,12 +15,16 @@
 
 <p>これでいいですか</p>
 
-<form:form action="confirm" modelAttribute="test">
 
+<form:form action="confirm" modelAttribute="test">
 ユーザーID：<form:input path="userId" readonly="true"/><br>
 ユーザー名：<form:input path="userName" readonly="true"/><br>
 Password：<form:input path="password" readonly="true" type="password"/><br>
+</form:form>
+
+<form:form action="confirm" modelAttribute="test2">
 <p>Password確認：<form:password path="rePassword" />${msg_rePassword}</p><br>
+
 <form:button>送信</form:button>
 </form:form>
 

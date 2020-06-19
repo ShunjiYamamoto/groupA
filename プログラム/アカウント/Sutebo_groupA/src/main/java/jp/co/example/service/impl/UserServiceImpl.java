@@ -14,13 +14,13 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	@Override
-	public User findById() {
-		return userDao.findById();
+	public User findById(String userId) {
+		return userDao.findById(userId);
 	}
 
 	@Override
-	public int insert() {
-		return userDao.insert();
+	public int insert(String userId,String userName,String password) {
+		return userDao.insert(userId, userName, password);
 	}
 
 }

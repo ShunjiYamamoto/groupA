@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import jp.co.example.controller.form.AccountForm;
 import jp.co.example.controller.form.ConfirmPasswordForm;
+import jp.co.example.entity.User;
 import jp.co.example.service.UserService;
 import jp.co.example.util.ParamUtil;
 
@@ -18,12 +19,15 @@ public class AccountController {
 	@RequestMapping("/account")
 	public String index(@ModelAttribute("test") AccountForm form, Model model) {
 
-		return "create_account";
+		return "createAccount";
 
 	}
 
+	@Autowired
+	private UserService UserService;
+
 	@RequestMapping(value="/create", method=RequestMethod.POST)
-	public String post(@ModelAttribute("test") AccountForm form, Model model) {
+	public String post(@ModelAttribute("test") AccountForm form,@ModelAttribute("test2") ConfirmPasswordForm form2, Model model) {
 
 		boolean check = false;
 
@@ -41,19 +45,16 @@ public class AccountController {
 
 		}
 
-		int insert = UserService.insert();
+		User list = UserService.findById(form.getUserId());
 
-		if(check == true) {
+		System.out.println(list);
+
+		if(check == true || list != null) {
 			return "createAccount";
 		}
 
-
-
 		return "confirmAccount";
 	}
-
-	@Autowired
-	private UserService UserService;
 
 	@RequestMapping(value="/confirm", method=RequestMethod.POST)
 	public String post2(@ModelAttribute("test") AccountForm form,ConfirmPasswordForm form2, Model model) {
@@ -63,7 +64,8 @@ public class AccountController {
 			return "confirmAccount";
 		}
 
-		int insert = UserService.insert();
+		//insert実行
+		UserService.insert(form.getUserId(),form.getUserName(),form.getPassword());
 
 		return "completeAccount";
 

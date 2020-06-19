@@ -25,10 +25,10 @@ public class User {
 		this.userName = userName;
 	}
 
-	public String getTelNo() {
+	public String getPassword() {
 		return password;
 	}
-	public void setTelNo(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 }

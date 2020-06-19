@@ -4,7 +4,7 @@ import jp.co.example.entity.User;
 
 public interface UserService {
 
-	public User findById();
-	public int insert();
+	public User findById(String userId);
+	public int insert(String userId, String userName, String password);
 
 }
