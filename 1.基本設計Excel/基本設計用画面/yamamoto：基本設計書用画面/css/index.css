@@ -1,0 +1,43 @@
+body { 
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+
+label {
+    margin-right: 10px;
+    width:130px;
+    float: left;
+}
+
+ul {
+    width: 350px;
+    margin: 0 auto;
+}
+
+
+input#button {
+    display: block;
+    margin: 0 auto;
+}
+
+.completeAcount { 
+    padding-top: 50px;
+    font-weight: 1000;
+}
+
+.box {
+    margin:0 auto;
+    width:500px;
+    border-style: solid;
+}
+
+.paymentTable{
+    border-collapse: collapse;
+    border:1px solid #333;
+    margin: 0 auto;
+}

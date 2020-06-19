@@ -1,0 +1,6 @@
+LineNofity.java
+
+	・JavaでLine Notifyを通して通知を送信するプログラム
+	
+	参考サイト
+	https://yusuke.blog/2020/04/29/2571

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>入力画面</title>
+    <style>
+        label {
+            margin-right: 20px;
+        }
+        
+        .disptable {
+            display: table;
+        }
+        
+        .disprow {
+            display: table-row;
+        }
+        
+        .dispcell {
+            display: table-cell;
+        }
+
+        .back{
+            margin-left: 300px;
+        }
+        
+        .solidlineandcenterdiv {
+            border-style: solid;
+            padding-right: 5px;
+            padding-left: 5px;
+            margin-right: 33%;
+            margin-left: 33%;
+        }
+        
+        div.solidlineandcenterdiv p {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back"><button type="button">戻る</button></div>
+    <div align="center">
+        <h1>家計データ入力</h1>
+        <br>
+        <br>
+        <br>
+        <div class="disptable">
+            <div class="disprow">
+                <div class="dispcell"><button type="button" style="background-color:greenyellow;">支出</button></div>
+                <div class="dispcell"><pre>            </pre></div>
+                <div class="dispcell"><button type="button">収入</button></div>
+            </div>
+        </div>
+        <p>
+            <form>
+                <div class="solidlineandcenterdiv">
+                    <p><label>日付</label><input type="date"></input><br></p>
+                    <p><label>
+                        <select name=”month”>
+                            <option value=”jan”>固定費</option>
+                            <option value=”feb”>通信費</option>
+                            <option value=”mar”>光熱費</option>
+                            <option value=”apr”>被服費</option>
+                            <option value=”may”>食費</option>
+                        </select>
+                    </label><input type="number"></input><br></p>
+                    <p><label>
+                        <select name=”month”>
+                            <option value=”jan”>固定費</option>
+                            <option value=”feb”>通信費</option>
+                            <option value=”mar”>光熱費</option>
+                            <option value=”apr”>被服費</option>
+                            <option value=”may”>食費</option>
+                        </select>
+                    </label><input type="number"></input><br></p>
+                    <p><label>
+                        <select name=”month”>
+                            <option value=”jan”>固定費</option>
+                            <option value=”feb”>通信費</option>
+                            <option value=”mar”>光熱費</option>
+                            <option value=”apr”>被服費</option>
+                            <option value=”may”>食費</option>
+                        </select>
+                    </label><input type="number"></input><br></p>
+                    <p><label>
+                        <select name=”month”>
+                            <option value=”jan”>固定費</option>
+                            <option value=”feb”>通信費</option>
+                            <option value=”mar”>光熱費</option>
+                            <option value=”apr”>被服費</option>
+                            <option value=”may”>食費</option>
+                        </select>
+                    </label><input type="number"></input><br></p>
+                    <p><label>
+                        <select name=”month”>
+                            <option value=”jan”>固定費</option>
+                            <option value=”feb”>通信費</option>
+                            <option value=”mar”>光熱費</option>
+                            <option value=”apr”>被服費</option>
+                            <option value=”may”>食費</option>
+                        </select>
+                    </label><input type="number"></input><br></p>
+                </div>
+                <div class="disptable">
+                    <div class="disprow">
+                        <div class="dispcell"><button type="button">登録</button></div>
+                        <div class="dispcell"><pre>      </pre></div>
+                        <div class="dispcell"><button type="button">項目の編集</button></div>
+                        <div class="dispcell"><pre>      </pre></div>
+                    </div>
+                </div>
+            </form>
+        </p>
+
+    </div>
+    <div class="right"></div>
+</body>
+
+</html>
