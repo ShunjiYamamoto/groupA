@@ -1,13 +1,13 @@
-package jp.co.example.from;
+package jp.co.example.form;
 
-public class LoginFrom {
+public class LoginForm {
 
 	private String userId;
 	private String password;
 
-	public LoginFrom() {}
+	public LoginForm() {}
 
-	public LoginFrom(String userId,String password) {
+	public LoginForm(String userId,String password) {
 		this.userId = userId;
 		this.password = password;
 	}
