@@ -8,7 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
     <link href="./css/process.css" rel="stylesheet">
     <title>メニュー</title>
 </head>
@@ -18,8 +21,10 @@
 
         <div id="header">
             <p class="systemNameTitle headerIcon"><span id="systemName">スーテェー簿</span></p>
-            <span class="headerBtn headerIcon label label-info">ログアウト</span>
+            <a href = "logout"><span class="headerBtn headerIcon label label-info">ログアウト</span>
         </div>
+
+ 		 <p>${fn:escapeXml(sessionInfo.userName)}さん、こんにちは</p>
 
         <h2>メニュー</h2>
 
