@@ -29,7 +29,7 @@
 
 <form:form action="token" modelAttribute="test">
 
-<form:input path="token" /><br>
+<form:input path="lineToken" /><br>
 
 <p>通過をオンにすると、記入した時間に通知が送られます。</p>
 

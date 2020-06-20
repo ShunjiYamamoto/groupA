@@ -1,8 +1,10 @@
 package jp.co.lineNotice.dao;
 
+import jp.co.lineNotice.entity.User;
+
 public interface UserDao {
 
-	public User findById(String userId);
-	public int insert(String userId, String userName, String password);
+	public User findByToken(String userId);
+	public int insert2(String userId, String userName, String password);
 
 }
