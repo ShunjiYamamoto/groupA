@@ -1,4 +1,4 @@
-package jp.co.example.util;
+package jp.co.account.util;
 
 public class ParamUtil {
 

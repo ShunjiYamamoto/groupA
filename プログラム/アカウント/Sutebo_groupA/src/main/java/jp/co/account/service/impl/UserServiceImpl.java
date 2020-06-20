@@ -1,11 +1,11 @@
-package jp.co.example.service.impl;
+package jp.co.account.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jp.co.example.dao.UserDao;
-import jp.co.example.entity.User;
-import jp.co.example.service.UserService;
+import jp.co.account.dao.UserDao;
+import jp.co.account.entity.User;
+import jp.co.account.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

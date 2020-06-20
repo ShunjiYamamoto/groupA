@@ -17,9 +17,9 @@
 
 
 <form:form action="confirm" modelAttribute="test">
-ユーザーID：<form:input path="userId" readonly="true"/><br>
-ユーザー名：<form:input path="userName" readonly="true"/><br>
-Password：<form:input path="password" readonly="true" type="password"/><br>
+ユーザーID：<form:input path="userId" disabled="true"/><br>
+ユーザー名：<form:input path="userName" disabled="true"/><br>
+Password：<form:input path="password" disabled="true" type="password"/><br>
 </form:form>
 
 <form:form action="confirm" modelAttribute="test2">
@@ -28,7 +28,7 @@ Password：<form:input path="password" readonly="true" type="password"/><br>
 <form:button>送信</form:button>
 </form:form>
 
-<a href="" >戻る</a>
+<a href="account" >戻る</a>
 
 </body>
 </html>

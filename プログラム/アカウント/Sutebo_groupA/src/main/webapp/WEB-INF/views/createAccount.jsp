@@ -23,7 +23,7 @@
 <form:button>送信</form:button>
 </form:form>
 
-<a href="" >戻る</a>
+<a href="menu" >戻る</a>
 
 </body>
 </html>

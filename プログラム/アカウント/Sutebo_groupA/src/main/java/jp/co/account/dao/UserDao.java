@@ -1,6 +1,6 @@
-package jp.co.example.dao;
+package jp.co.account.dao;
 
-import jp.co.example.entity.User;
+import jp.co.account.entity.User;
 
 public interface UserDao {
 

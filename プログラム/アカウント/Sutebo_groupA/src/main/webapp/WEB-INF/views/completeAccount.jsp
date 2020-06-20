@@ -7,10 +7,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Refresh" content="3;url=menu">
+
+
 <title>アカウント完了画面</title>
 </head>
 <body>
+
+
 
 <p>アカウントの登録が完了しました。<br>
 ※３秒後にログイン画面に遷移します。</p>

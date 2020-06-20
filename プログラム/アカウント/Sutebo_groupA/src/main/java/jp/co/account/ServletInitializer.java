@@ -1,4 +1,4 @@
-package jp.co.example;
+package jp.co.account;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

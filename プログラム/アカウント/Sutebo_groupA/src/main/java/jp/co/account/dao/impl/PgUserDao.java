@@ -1,4 +1,4 @@
-package jp.co.example.dao.impl;
+package jp.co.account.dao.impl;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import jp.co.example.dao.UserDao;
-import jp.co.example.entity.User;
+import jp.co.account.dao.UserDao;
+import jp.co.account.entity.User;
 
 @Repository
 public class PgUserDao implements UserDao {
@@ -25,11 +25,7 @@ public class PgUserDao implements UserDao {
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("userId", userId);
 
-		System.out.println("通過");
-
 		List<User> resultList = jdbcTemplate.query(sql, param,new BeanPropertyRowMapper<User>(User.class));
-
-		System.out.println("通過2");
 
 		return resultList.isEmpty() ? null : resultList.get(0);
 
@@ -37,16 +33,14 @@ public class PgUserDao implements UserDao {
 
 	public int insert(String userId,String userName,String password) {
 
-		String sql = "INSERT INTO users VALUES (:userId, :userName, :password)";
+		String sql = "INSERT INTO users(user_id, user_name,password) VALUES (:userId, :userName, :password)";
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("userId", userId);
 		param.addValue("userName", userName);
 		param.addValue("password", password);
 
-		jdbcTemplate.update(sql, param);
-
-		return (Integer) null;
+		return jdbcTemplate.update(sql, param);
 
 	}
 }

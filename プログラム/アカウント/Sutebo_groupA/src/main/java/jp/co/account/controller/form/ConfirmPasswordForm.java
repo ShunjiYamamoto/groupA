@@ -1,4 +1,4 @@
-package jp.co.example.controller.form;
+package jp.co.account.controller.form;
 
 public class ConfirmPasswordForm {
 
