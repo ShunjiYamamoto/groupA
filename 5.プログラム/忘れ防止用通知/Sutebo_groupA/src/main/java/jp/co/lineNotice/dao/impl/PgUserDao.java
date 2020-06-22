@@ -19,9 +19,8 @@ public class PgUserDao implements UserDao {
 	private NamedParameterJdbcTemplate jdbcTemplate;
 
 	@Override
-	public User findByToken(String userId) {
+	public String findByToken(String userId) {
 
-		System.out.println("userId=" + userId);
 
 		String sql = "SELECT line_token FROM users WHERE user_id =:userId";
 
@@ -30,9 +29,9 @@ public class PgUserDao implements UserDao {
 
 		List<User> resultList = jdbcTemplate.query(sql, param,new BeanPropertyRowMapper<User>(User.class));
 
-		System.out.println("resultList=" + resultList);
+		String lineToken = resultList.get(0).getLineToken();
 
-		return resultList.isEmpty() ? null : resultList.get(0);
+		return resultList.isEmpty() ? null : lineToken;
 
 	}
 

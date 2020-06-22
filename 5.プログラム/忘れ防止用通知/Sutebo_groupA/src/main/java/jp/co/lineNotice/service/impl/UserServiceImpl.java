@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jp.co.lineNotice.dao.UserDao;
-import jp.co.lineNotice.entity.User;
 import jp.co.lineNotice.service.UserService;
 
 @Service
@@ -14,7 +13,7 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	@Override
-	public User findByToken(String usersId) {
+	public String findByToken(String usersId) {
 		return userDao.findByToken(usersId);
 	}
 

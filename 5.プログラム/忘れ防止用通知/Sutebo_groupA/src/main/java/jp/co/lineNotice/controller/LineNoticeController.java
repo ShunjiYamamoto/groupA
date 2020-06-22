@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.lineNotice.controller.form.LineNoticeForm;
-import jp.co.lineNotice.entity.User;
 import jp.co.lineNotice.service.UserService;
 
 @Controller
@@ -27,15 +26,15 @@ public class LineNoticeController {
 		//Http Sessionを使用して保存
 		session.setAttribute("userId","b");
 
-		String usersId = (String) session.getAttribute("userId");  // 取得
+		String userId = (String) session.getAttribute("userId");  // 取得
 
 		//トークンチェック
-		User list = UserService.findByToken(usersId);
+		String token = UserService.findByToken(userId);
 
-		System.out.println(list);
-
-		if(list == null) {
-			model.addAttribute("lineToken", "トークンを入力してください");
+		if(token != null) {
+			model.addAttribute("lineToken", "a");
+			//session.setAttribute("lineToken","b");
+			System.out.println("通過");
 		}
 
 		return "lineNotice";

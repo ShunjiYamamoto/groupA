@@ -14,7 +14,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + userId + ", name=" + userName + ", password=" + password + "]";
+		return "User [id=" + userId + ", name=" + userName + ", password=" + password
+					+ ",lineToken=" + lineToken +"]";
 	}
 
 	public String getUserId() {
