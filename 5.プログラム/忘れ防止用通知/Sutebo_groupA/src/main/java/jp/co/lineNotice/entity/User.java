@@ -55,7 +55,7 @@ public class User {
 		this.lineTime = lineTime;
 	}
 
-	public boolean isLineNoticeOn() {
+	public boolean getLineNoticeOn() {
 		return lineNoticeOn;
 	}
 

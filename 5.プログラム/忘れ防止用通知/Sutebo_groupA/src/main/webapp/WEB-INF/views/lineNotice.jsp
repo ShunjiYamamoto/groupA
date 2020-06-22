@@ -27,16 +27,19 @@
 
 <p>発行されたトークンを入力してください。
 
-<form:form action="token" modelAttribute="test">
+<form:form action="line2" modelAttribute="test">
 
-<form:input path="lineToken" /><br>
+<form:input path="lineToken" value="${lineToken}"/><br>
+${msg_lineToken}<br>
 
 <p>通過をオンにすると、記入した時間に通知が送られます。</p>
 
 <form:input path="hour" />時
 <form:input path="minute" />分
 
-<form:input path="lineNoticeOn" /><br>
+<form:radiobutton path="lineNoticeOn" value="On"/>オン
+<form:radiobutton path="lineNoticeOn" value="Off"/>オフ<br>
+${msg_lineTime}<br>
 
 <form:button>保存</form:button>
 </form:form>

@@ -18,7 +18,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int insert2(String userId, String userName, String password) {
-		return userDao.insert2(userId, userName, password);
+	public int update(String userId,String lineToken, Integer hour, Integer minute, boolean lineNoticeOn) {
+		return userDao.update(userId,lineToken,hour,minute,lineNoticeOn);
 	}
+
 }

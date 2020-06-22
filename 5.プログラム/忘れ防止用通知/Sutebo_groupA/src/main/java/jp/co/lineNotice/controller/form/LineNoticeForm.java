@@ -28,7 +28,7 @@ public class LineNoticeForm {
 		this.minute = minute;
 	}
 
-	public boolean isLineNoticeOn() {
+	public boolean getLineNoticeOn() {
 		return lineNoticeOn;
 	}
 	public void setLineNoticeOn(boolean lineNoticeOn) {

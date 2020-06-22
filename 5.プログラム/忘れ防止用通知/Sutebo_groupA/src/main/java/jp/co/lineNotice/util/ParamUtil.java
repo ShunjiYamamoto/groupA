@@ -13,6 +13,14 @@ public class ParamUtil {
         }
     }
 
+    public static boolean isNullOrEmptyNumber(Integer str) {
+        if (str == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * 引数に指定した文字列が数値に変換できるかを判定
      */

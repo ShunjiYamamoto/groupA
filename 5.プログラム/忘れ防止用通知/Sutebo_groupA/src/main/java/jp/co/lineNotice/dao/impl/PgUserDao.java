@@ -1,5 +1,6 @@
 package jp.co.lineNotice.dao.impl;
 
+import java.sql.Time;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,29 +37,18 @@ public class PgUserDao implements UserDao {
 	}
 
 	@Override
-	public int insert2(String userId, String userName, String password) {
-		String sql = "INSERT INTO users(user_id, user_name,password,line_token, line_time,line_notice_on) "
-				+ "		VALUES (:userId, :userName, :password,:lineToken, :lineTime, :lineNoticeOn)";
+	public int update(String userId,String lineToken,Integer hour,Integer minute,boolean lineNoticeOn) {
+
+		String sql = "UPDATE users SET line_token = :lineToken,line_time = :lineTime,"
+				+ "	line_notice_on = :lineNoticeOn  WHERE user_id = :userId";
+
+		Time lineTime = new Time(hour,minute,0);
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("lineToken", lineToken);
+		param.addValue("lineTime",lineTime);
+		param.addValue("lineNoticeOn", lineNoticeOn);
 		param.addValue("userId", userId);
-		param.addValue("userName", userName);
-		param.addValue("password", password);
-//		param.addValue("lineToken", lineToken);
-//		param.addValue("lineTime", lineTime);
-//		param.addValue("lineNoticeOn", lineNoticeOn);
-
-		return jdbcTemplate.update(sql, param);
-
-	}
-
-	public int update(User user) {
-
-		String sql = "INSERT INTO users(user_id, user_name,password,line_token, line_time,line_notice_on) "
-				+ "		VALUES (:userId, :userName, :password,:lineToken, :lineTime, :lineNoticeOn)";
-
-		MapSqlParameterSource param = new MapSqlParameterSource();
-		param.addValue("lineToken", "a");
 
 		return jdbcTemplate.update(sql, param);
 
