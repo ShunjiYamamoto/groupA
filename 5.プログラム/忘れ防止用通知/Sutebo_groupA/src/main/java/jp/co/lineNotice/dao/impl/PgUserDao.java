@@ -53,4 +53,16 @@ public class PgUserDao implements UserDao {
 		return jdbcTemplate.update(sql, param);
 
 	}
+
+//	public static List<User> findAllToken() {
+//
+//		String sql = "SELECT line_token,line_time FROM users WHERE line_notice_on = true";
+//
+//		System.out.println("通過");
+//
+//		List<User> line = jdbcTemplate.query(sql,new BeanPropertyRowMapper<User>(User.class));
+//
+//		return line.isEmpty() ? null : line;
+//
+//	}
 }

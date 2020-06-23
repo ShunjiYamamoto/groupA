@@ -6,4 +6,5 @@ public interface UserService {
 
 	int update(String userId, String lineToken, Integer hour, Integer minute, boolean lineNoticeOn);
 
+
 }
