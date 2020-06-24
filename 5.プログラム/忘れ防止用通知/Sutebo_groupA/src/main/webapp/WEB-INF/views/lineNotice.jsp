@@ -34,8 +34,8 @@ ${msg_lineToken}<br>
 
 <p>通過をオンにすると、記入した時間に通知が送られます。</p>
 
-<form:input path="hour" />時
-<form:input path="minute" />分
+<form:input path="hour" type="number" />時
+<form:input path="minute" type="number" />分
 
 <form:radiobutton path="lineNoticeOn" value="On"/>オン
 <form:radiobutton path="lineNoticeOn" value="Off"/>オフ<br>

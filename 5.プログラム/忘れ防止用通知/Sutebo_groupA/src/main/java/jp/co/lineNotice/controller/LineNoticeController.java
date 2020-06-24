@@ -59,10 +59,18 @@ public class LineNoticeController {
 		}else if(ParamUtil.isNullOrEmptyNumber(form.getMinute()) == true){
 			model.addAttribute("msg_lineTime", "時間が入力されていません");
 			check = true;
+
+		}else if(form.getHour() >= 0 || form.getHour() < 24 ) {
+			model.addAttribute("msg_lineTime", "正しい数値が入力されていません");
+			check = true;
+
+		}else if(form.getMinute() >= 0 || form.getMinute() < 60) {
+			model.addAttribute("msg_lineTime", "正しい数値が入力されていません");
+			check = true;
+
 		}
 
 		if(check ==false) {
-
 			int a = UserService.update(userId,form.getLineToken(),form.getHour(),form.getMinute(),form.getLineNoticeOn());
 
 		}
