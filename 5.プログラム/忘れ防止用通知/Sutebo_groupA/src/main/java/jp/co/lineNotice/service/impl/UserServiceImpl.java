@@ -1,5 +1,7 @@
 package jp.co.lineNotice.service.impl;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +20,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int update(String userId,String lineToken, Integer hour, Integer minute, boolean lineNoticeOn) {
-		return userDao.update(userId,lineToken,hour,minute,lineNoticeOn);
+	public int update(String userId,String lineToken, Integer hour, Integer minute, boolean lineNoticeOn, Date date) {
+		return userDao.update(userId,lineToken,hour,minute,lineNoticeOn,date);
 	}
 
 }

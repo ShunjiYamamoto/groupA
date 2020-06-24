@@ -17,15 +17,14 @@ import java.util.TimerTask;
 
 public class LineNotify {
 
-	public static void sub(String token,Time time) throws ParseException{
+	public static void sub(String token,Time time, Date date2) throws ParseException{
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd");
 
 		Timer timer = new Timer(false);
 
-		Date date = new Date();
-        //System.out.println("日付：" + sdf.format(date));
+		//Date date = new Date();
 
 		TimerTask task = new TimerTask() {
 
@@ -34,14 +33,13 @@ public class LineNotify {
 
 				String トークン = token;	//トークン
 		        LineNotify lineNotify = new LineNotify(トークン);		//インスタンスの生成
-		        lineNotify.notify("テスト");	//通知内容
+		        lineNotify.notify("指定した時間になりました");	//通知内容
 
-				//System.out.println("てすと");
 				timer.cancel();
 			}
 		};
 
-		timer.schedule(task, (sdf.parse(sdf2.format(date) + " " + time)));
+		timer.schedule(task, (sdf.parse(sdf2.format(date2) + " " + time)));
 
 	}
 	    private final String token;

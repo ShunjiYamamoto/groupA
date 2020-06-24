@@ -60,7 +60,7 @@ public class AccountController {
 		User list = UserService.findById(form.getUserId());
 
 		if(list != null) {
-			model.addAttribute("msg_userId", "入力したユーザーIDはすでに使用されています。");
+			model.addAttribute("msg_userId", "入力したユーザーIDはすでに使用されています");
 			check = true;
 		}
 
@@ -77,17 +77,24 @@ public class AccountController {
 	}
 
 	@RequestMapping(value="/confirm", method=RequestMethod.POST)
-	public String post2(@ModelAttribute("test") AccountForm form,ConfirmPasswordForm form2, Model model) {
-
-		if(ParamUtil.isNullOrEmpty(form2.getRePassword()) == true) {
-			model.addAttribute("msg_rePassword", "Password確認が入力されていません");
-			return "confirmAccount";
-		}
+	public String post2(@ModelAttribute("test") AccountForm form,@ModelAttribute("test2") ConfirmPasswordForm form2, Model model) {
 
 		//Http Sessionを使用して取得
 		String userId = (String) session.getAttribute("userId");  // 取得
 		String userName = (String) session.getAttribute("userName");  // 取得
 		String password = (String) session.getAttribute("password");  // 取得
+
+		System.out.println("password:" + password);
+		System.out.println("Repassword:" + form2.getRePassword());
+
+		if(ParamUtil.isNullOrEmpty(form2.getRePassword()) == true) {
+			model.addAttribute("msg_rePassword", "Password確認が入力されていません");
+			return "confirmAccount";
+
+		}else if(form2.getRePassword().equals(password) != true) {
+			model.addAttribute("msg_rePassword", "Passwordが間違っています");
+			return "confirmAccount";
+		}
 
 		//insert実行
 		UserService.insert(userId,userName,password);

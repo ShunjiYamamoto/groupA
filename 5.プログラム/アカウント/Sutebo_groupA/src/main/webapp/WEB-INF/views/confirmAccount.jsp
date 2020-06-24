@@ -17,9 +17,9 @@
 
 
 <form:form action="confirm" modelAttribute="test">
-ユーザーID：<form:input path="userId" disabled="true"/><br>
-ユーザー名：<form:input path="userName" disabled="true"/><br>
-Password：<form:input path="password" disabled="true" type="password"/><br>
+ユーザーID：<form:input path="userId" disabled="true" value="${userId}"/><br>
+ユーザー名：<form:input path="userName" disabled="true" value="${userName}"/><br>
+Password：<form:input path="password" disabled="true" type="password" value="${password}"/><br>
 </form:form>
 
 <form:form action="confirm" modelAttribute="test2">

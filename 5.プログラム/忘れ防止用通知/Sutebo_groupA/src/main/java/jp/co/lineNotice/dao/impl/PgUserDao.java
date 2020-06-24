@@ -1,6 +1,7 @@
 package jp.co.lineNotice.dao.impl;
 
 import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,10 +38,10 @@ public class PgUserDao implements UserDao {
 	}
 
 	@Override
-	public int update(String userId,String lineToken,Integer hour,Integer minute,boolean lineNoticeOn) {
+	public int update(String userId,String lineToken,Integer hour,Integer minute,boolean lineNoticeOn, Date date) {
 
 		String sql = "UPDATE users SET line_token = :lineToken,line_time = :lineTime,"
-				+ "	line_notice_on = :lineNoticeOn  WHERE user_id = :userId";
+				+ "	line_notice_on = :lineNoticeOn, line_day = :line_day  WHERE user_id = :userId";
 
 		Time lineTime = new Time(hour,minute,0);
 
@@ -49,6 +50,7 @@ public class PgUserDao implements UserDao {
 		param.addValue("lineTime",lineTime);
 		param.addValue("lineNoticeOn", lineNoticeOn);
 		param.addValue("userId", userId);
+		param.addValue("line_day", date);
 
 		return jdbcTemplate.update(sql, param);
 
