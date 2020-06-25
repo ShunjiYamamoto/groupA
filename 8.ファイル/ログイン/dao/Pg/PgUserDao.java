@@ -1,5 +1,6 @@
 package jp.co.example.dao.impl;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,7 @@ public class PgUserDao implements UserDao{
 
 	@Override
 	public List<User> deleteGet (String userId, String password){
+
 		String sql = "SELECT user_delete FROM users WHERE user_id = :userId AND password = :password";
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("userId", userId);
@@ -58,6 +60,47 @@ public class PgUserDao implements UserDao{
 	   return resultList;
 
 	}
+
+	@Override
+	public void updateLoginDate (Integer usersId, Date lastLoginDate) {
+
+		String sql = "UPDATE users SET last_login_date = :lastLoginDate WHERE users_id = :usersId";
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("usersId", usersId);
+		param.addValue("lastLoginDate", lastLoginDate);
+
+		jdbcTemplate.update(sql, param);
+
+	}
+
+
+
+	public User findById(String userId) {
+
+		String sql = "SELECT * FROM users WHERE user_id =:userId";
+
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("userId", userId);
+
+		List<User> resultList = jdbcTemplate.query(sql, param,new BeanPropertyRowMapper<User>(User.class));
+
+		return resultList.isEmpty() ? null : resultList.get(0);
+
+	}
+
+	public int insert(String userId,String userName,String password) {
+
+		String sql = "INSERT INTO users(user_id, user_name,password) VALUES (:userId, :userName, :password)";
+
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("userId", userId);
+		param.addValue("userName", userName);
+		param.addValue("password", password);
+
+		return jdbcTemplate.update(sql, param);
+
+	}
+
 
 
 }

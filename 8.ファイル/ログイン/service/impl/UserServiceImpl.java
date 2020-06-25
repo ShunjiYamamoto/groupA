@@ -1,5 +1,6 @@
 package jp.co.example.service.impl;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,22 @@ public class UserServiceImpl implements UserService{
 		return list.get(0).getUserDelete();
 	}
 
+
+	@Override
+	public User findById(String userId) {
+		return userDao.findById(userId);
+	}
+
+	@Override
+	public int insert(String userId,String userName,String password) {
+		return userDao.insert(userId, userName, password);
+	}
+
+
+	@Override
+	public void updateLoginDate(Integer usersId, Date lastLoginDate) {
+		userDao.updateLoginDate(usersId, lastLoginDate);
+	}
 //	@Override
 //	public List<User> find(User user) {
 //		return UserDao.find(user);
