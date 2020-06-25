@@ -1,4 +1,4 @@
-package jp.co.account.controller;
+package jp.co.example.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import jp.co.account.controller.form.AccountForm;
-import jp.co.account.controller.form.ConfirmPasswordForm;
-import jp.co.account.entity.User;
-import jp.co.account.service.UserService;
-import jp.co.account.util.ParamUtil;
+import jp.co.example.controller.form.ConfirmPasswordForm;
+import jp.co.example.entity.User;
+import jp.co.example.example.form.AccountForm;
+import jp.co.example.service.UserService;
+import jp.co.example.util.ParamUtil;
 
 @Controller
 public class AccountController {

@@ -1,15 +1,10 @@
-package jp.co.account.entity;
+package jp.co.example.example.form;
 
-public class User {
+public class AccountForm {
 
 	private String userId;
 	private String userName;
 	private String password;
-
-	@Override
-	public String toString() {
-		return "User [id=" + userId + ", name=" + userName + ", password=" + password + "]";
-	}
 
 	public String getUserId() {
 		return userId;
@@ -31,4 +26,5 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 }

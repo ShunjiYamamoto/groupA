@@ -1,6 +1,6 @@
-package jp.co.account.service;
+package jp.co.example.service;
 
-import jp.co.account.entity.User;
+import jp.co.example.entity.User;
 
 public interface UserService {
 

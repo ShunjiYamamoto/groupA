@@ -1,4 +1,4 @@
-package jp.co.account.dao.impl;
+package jp.co.example.dao.impl;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import jp.co.account.dao.UserDao;
-import jp.co.account.entity.User;
+import jp.co.example.dao.UserDao;
+import jp.co.example.entity.User;
 
 @Repository
 public class PgUserDao implements UserDao {
