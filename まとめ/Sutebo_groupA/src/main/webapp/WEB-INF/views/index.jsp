@@ -34,7 +34,7 @@
                 </p>
             </div>
             <div id="topBtn">
-                <a href="loginPage" id="mainBtn" class="btn btn-info">ログイン画面</a>
+                <a href="login" id="mainBtn" class="btn btn-info">ログイン画面</a>
                 <a href="createAccount" id="createAccount" class="btn btn-info">アカウント作成</a>
             </div>
         </div>

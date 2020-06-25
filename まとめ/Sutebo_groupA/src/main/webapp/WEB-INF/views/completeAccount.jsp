@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,14 +24,13 @@
             <p class="systemNameTitle"><span id="systemName">スーテェー簿</span></p>
         </div>
 
-        <div class="main">
+    <div class="main">
 
             <p class="completeAcount">アカウントの登録が完了しました。
                 <br> ※３秒後にログイン画面に遷移します。
             </p>
-
-        </div>
-    </div>
+	</div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

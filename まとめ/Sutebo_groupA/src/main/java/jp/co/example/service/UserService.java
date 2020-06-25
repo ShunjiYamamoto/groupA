@@ -2,6 +2,8 @@ package jp.co.example.service;
 
 import java.util.Date;
 
+import jp.co.example.entity.User;
+
 public interface UserService {
 
 	//パスワードを取得
@@ -23,4 +25,15 @@ public interface UserService {
 
 	public int update(String userId, String lineToken, Integer hour, Integer minute, boolean lineNoticeOn, Date date);
 
+	public User authentication(String userId, String password);
+
+	public boolean deleteGet(String userId, String password);
+
+	public User findById(String userId);
+
+	public int insert(String userId, String userName, String password);
+
+	public void updateLoginDate(Integer usersId, Date lastLoginDate);
+
+	public Integer findUsersId(String userId);
 }

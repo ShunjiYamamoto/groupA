@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,64 +22,42 @@
     <link href="./css/index.css" rel="stylesheet">
     <title>アカウント作成</title>
 </head>
-
 <body>
 
-    <div class=”bg-opacity”>
+<div class=”bg-opacity”>
 
         <div id="header">
             <p class="systemNameTitle"><span id="systemName">スーテェー簿</span></p>
         </div>
 
-        <h2>アカウント作成</h2>
+        <h2>アカウント作成確認</h2>
+
+		<h2>これでいいですか？</h2>
 
         <div class="main">
 
-<!--             <div class="alert alert-dismissible alert-danger">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>※すでに使われているユーザーIDです。</strong>
-            </div> -->
-
             <div class="errorMsg">
 
-                ※すでに使われているユーザーIDです。<br>
+                ${msg}<br>
 
             </div>
 
-            <form:form action="" method="post" modelAttribute="">
+			<form:form action="confirm" modelAttribute="test">
+			ユーザーID：<form:input path="userId" disabled="true" value="${userId}"/><br>
+			ユーザー名：<form:input path="userName" disabled="true" value="${userName}"/><br>
+			Password：<form:input path="password" disabled="true" type="password" value="${password}"/><br>
+			</form:form>
 
-                <fieldset>
+			<form:form action="confirm" modelAttribute="test2">
+			Password確認：<form:password path="rePassword" /><br>
 
-                    <ul>
+			<form:button>送信</form:button>
+			</form:form>
 
-                        <div class="inputForm">
+			<a href="createAccount" >戻る</a>
 
-                            <li class="userId">
-                                <label key="userId">ユーザーID：</label>
-                                <!-- placeholderは消してください。 -->
-                                <input id="userId" type="text" size="25" placeholder="12345678901234567890">
-                            </li>
-                            <li class="userName">
-                                <label key="userName">ユーザー名：</label>
-                                <input id="userName" type="text" size="25">
-                            </li>
-                            <li class="password">
-                                <label for="password">パスワード：</label>
-                                <input id="password" type="password" size="25">
-                            </li>
-
-                        </div>
-
-                        <li><button class="btn btn-primary" id="mainBtn">登録</button>
-                            <a href="index" id class="btn btn-primary" id="backBtn">戻る</a>
-                        </li>
-                    </ul>
-
-                </fieldset>
-
-            </form:form>
-        </div>
     </div>
-</body>
+</div>
 
+</body>
 </html>

@@ -53,4 +53,40 @@ public class UserServiceImpl implements UserService{
 		return userDao.update(userId,lineToken,hour,minute,lineNoticeOn,date);
 	}
 
+	//認証処理
+		@Override
+		public User authentication(String userId, String password) {
+			return userDao.findByUserIdAndPassword(userId, password);
+		}
+
+
+		@Override
+		public boolean deleteGet(String userId, String password) {
+			List<User> list = userDao.deleteGet(userId, password);
+			System.out.println(list.get(0).getUserDelete());
+			return list.get(0).getUserDelete();
+		}
+
+
+		@Override
+		public User findById(String userId) {
+			return userDao.findById(userId);
+		}
+
+		@Override
+		public int insert(String userId,String userName,String password) {
+			return userDao.insert(userId, userName, password);
+		}
+
+
+		@Override
+		public void updateLoginDate(Integer usersId, Date lastLoginDate) {
+			userDao.updateLoginDate(usersId, lastLoginDate);
+		}
+
+		@Override
+		public Integer findUsersId(String userId) {
+			return userDao.findUsersId(userId);
+		}
+
 }

@@ -6,6 +6,7 @@ import java.util.Date;
 public class User {
 
 	//usersテーブルに対応するフィールド
+
 	private Integer usersId;
 	private String userId;
 	private String userName;
@@ -15,6 +16,7 @@ public class User {
 	private String lineToken;
 	private Timestamp lineTime;
 	private boolean lineNoticeOn ;
+	private String rePassword;
 
 	public User() {}
 
@@ -97,6 +99,14 @@ public class User {
 	}
 	public void setLineNoticeOn(boolean lineNoticeOn) {
 		this.lineNoticeOn = lineNoticeOn;
+	}
+
+	public String getRePassword() {
+		return rePassword;
+	}
+
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
 	}
 
 }

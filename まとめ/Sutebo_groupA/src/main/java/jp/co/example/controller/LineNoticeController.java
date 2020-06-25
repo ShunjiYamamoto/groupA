@@ -40,6 +40,9 @@ public class LineNoticeController {
 
 		String userId = (String) session.getAttribute("userId");  // 取得
 
+		/*		User user = (User) session.getAttribute("user");  // 取得
+				String userId = user.getUserId();*/
+
 		//トークンチェック
 		String token = UserService.findByToken(userId);
 

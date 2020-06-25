@@ -9,12 +9,21 @@ public class ConfirmPasswordForm {
 	@NotBlank(message="パスワードは必須です。")
 	private String password;
 
+	private String rePassword;
+
 	public String getPassword() {
 		return this.password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getRePassword() {
+		return rePassword;
+	}
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
 	}
 
 }

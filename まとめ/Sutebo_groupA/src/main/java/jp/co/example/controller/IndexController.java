@@ -54,6 +54,7 @@ public class IndexController {
 
 	public void displayNotice(Model model) {
 		User user = (User) session.getAttribute("user");
+		System.out.println(user.getUsersId());
 		List<NoticeMonth> noticeList = noticeMonthService.findByUsersId(user.getUsersId());
 		model.addAttribute("noticeList", noticeList);
 	}
