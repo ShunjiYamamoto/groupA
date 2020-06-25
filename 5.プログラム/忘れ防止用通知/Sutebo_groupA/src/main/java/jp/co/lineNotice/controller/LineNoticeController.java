@@ -25,6 +25,19 @@ public class LineNoticeController {
 	@Autowired
 	private UserService UserService;
 
+	@RequestMapping("/menu")
+	public String back(@ModelAttribute("test") LineNoticeForm form, Model model) {
+
+		return "menu";
+
+	}
+	@RequestMapping("/configure")
+	public String back2(@ModelAttribute("test") LineNoticeForm form, Model model) {
+
+		return "configure";
+
+	}
+
 	@RequestMapping("/line")
 	public String lineSet(@ModelAttribute("test") LineNoticeForm form, Model model) {
 
