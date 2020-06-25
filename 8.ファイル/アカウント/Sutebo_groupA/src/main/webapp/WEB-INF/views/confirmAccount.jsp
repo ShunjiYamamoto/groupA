@@ -32,25 +32,29 @@
 
         <h2>アカウント作成確認画面</h2>
 
-		<p>これでいいですか</p>
+		<h2>これでいいですか</h2>
 
         <div class="main">
 
+            <div class="errorMsg">
 
+                ${msg}<br>
 
-<form:form action="confirm" modelAttribute="test">
-ユーザーID：<form:input path="userId" disabled="true" value="${userId}"/><br>
-ユーザー名：<form:input path="userName" disabled="true" value="${userName}"/><br>
-Password：<form:input path="password" disabled="true" type="password" value="${password}"/><br>
-</form:form>
+            </div>
 
-<form:form action="confirm" modelAttribute="test2">
-<p>Password確認：<form:password path="rePassword" />${msg_rePassword}</p><br>
+			<form:form action="confirm" modelAttribute="test">
+			ユーザーID：<form:input path="userId" disabled="true" value="${userId}"/><br>
+			ユーザー名：<form:input path="userName" disabled="true" value="${userName}"/><br>
+			Password：<form:input path="password" disabled="true" type="password" value="${password}"/><br>
+			</form:form>
 
-<form:button>送信</form:button>
-</form:form>
+			<form:form action="confirm" modelAttribute="test2">
+			Password確認：<form:password path="rePassword" /><br>
 
-<a href="account" >戻る</a>
+			<form:button>送信</form:button>
+			</form:form>
+
+			<a href="createAccount" >戻る</a>
 
     </div>
 </div>

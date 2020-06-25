@@ -36,19 +36,25 @@
 
         <div class="main">
 
-<form:form action="create" modelAttribute="test">
+        	<div class="errorMsg">
 
-<p>ユーザーID：<form:input path="userId" />${msg_userId}</p><br>
-<p>ユーザー名：<form:input path="userName" />${msg_userName}</p><br>
-<p>Password：<form:password path="password" />${msg_Password}</p><br>
+                ${msg}<br>
 
-<form:button>送信</form:button>
-</form:form>
+            </div>
 
-<a href="menu" >戻る</a>
+				<form:form action="create" modelAttribute="test">
 
-   </div>
-</div>
+				ユーザーID：<form:input path="userId" /><br>
+				ユーザー名：<form:input path="userName" /><br>
+				Password：<form:password path="password" /><br>
+
+				<form:button>送信</form:button>
+				</form:form>
+
+				<a href="createBack" >戻る</a>
+
+		</div>
+	</div>
 
 </body>
 </html>

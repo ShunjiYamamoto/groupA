@@ -21,10 +21,10 @@ public class AccountController {
 	@Autowired
 	HttpSession session;
 
-	@RequestMapping("/menu")
+	@RequestMapping("/createBack")
 	public String back(@ModelAttribute("test") AccountForm form, Model model) {
 
-		return "menu";
+		return "index";
 
 	}
 	@RequestMapping("/createAccount")
@@ -42,25 +42,24 @@ public class AccountController {
 
 		boolean check = false;
 
-		//入力チェック
-		if(ParamUtil.isNullOrEmpty(form.getUserId()) == true){
-			model.addAttribute("msg_userId", "ユーザーIDが入力されていません");
-			check = true;
-		}
-		if(ParamUtil.isNullOrEmpty(form.getUserName()) == true){
-			model.addAttribute("msg_userName", "ユーザー名が入力されていません");
-			check = true;
-		}
-		if(ParamUtil.isNullOrEmpty(form.getPassword()) == true){
-			model.addAttribute("msg_Password", "Passwordが入力されていません");
-			check = true;
-		}
-
 		//ユーザーID重複チェック
 		User list = UserService.findById(form.getUserId());
 
-		if(list != null) {
-			model.addAttribute("msg_userId", "入力したユーザーIDはすでに使用されています");
+		//入力チェック
+		if(ParamUtil.isNullOrEmpty(form.getUserId()) == true){
+			model.addAttribute("msg", "ユーザーIDが入力されていません");
+			check = true;
+		}
+		else if(ParamUtil.isNullOrEmpty(form.getUserName()) == true){
+			model.addAttribute("msg", "ユーザー名が入力されていません");
+			check = true;
+		}
+		else if(ParamUtil.isNullOrEmpty(form.getPassword()) == true){
+			model.addAttribute("msg", "Passwordが入力されていません");
+			check = true;
+		}
+		else if(list != null) {
+			model.addAttribute("msg", "入力したユーザーIDはすでに使用されています");
 			check = true;
 		}
 
@@ -84,15 +83,12 @@ public class AccountController {
 		String userName = (String) session.getAttribute("userName");  // 取得
 		String password = (String) session.getAttribute("password");  // 取得
 
-		System.out.println("password:" + password);
-		System.out.println("Repassword:" + form2.getRePassword());
-
 		if(ParamUtil.isNullOrEmpty(form2.getRePassword()) == true) {
-			model.addAttribute("msg_rePassword", "Password確認が入力されていません");
+			model.addAttribute("msg", "Password確認が入力されていません");
 			return "confirmAccount";
 
 		}else if(form2.getRePassword().equals(password) != true) {
-			model.addAttribute("msg_rePassword", "Passwordが間違っています");
+			model.addAttribute("msg", "Passwordが間違っています");
 			return "confirmAccount";
 		}
 
