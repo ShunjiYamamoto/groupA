@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import jp.co.example.dao.ItemDao;
+import jp.co.example.dao.impl.PgItemDao;
 import jp.co.example.dao.impl.PgUserDao;
+import jp.co.example.entity.Item;
 import jp.co.example.entity.User;
 import jp.co.example.form.AccountForm;
 import jp.co.example.form.ConfirmPasswordForm;
@@ -22,6 +23,12 @@ public class AccountController {
 
 	@Autowired
 	HttpSession session;
+
+	@Autowired
+	PgUserDao user;
+
+	@Autowired
+	PgItemDao item;
 
 	@RequestMapping("/createBack")
 	public String back(@ModelAttribute("test") AccountForm form, Model model) {
@@ -78,7 +85,7 @@ public class AccountController {
 	}
 
 	@RequestMapping(value="/confirm", method=RequestMethod.POST)
-	public String post2(@ModelAttribute("test") AccountForm form,@ModelAttribute("test2") ConfirmPasswordForm form2, Model model) {
+	public String post2(@ModelAttribute("test") AccountForm form,@ModelAttribute("test2") ConfirmPasswordForm form2, Model model) throws InterruptedException {
 
 		//Http Sessionを使用して取得
 		String userId = (String) session.getAttribute("userId");  // 取得
@@ -94,18 +101,19 @@ public class AccountController {
 			return "confirmAccount";
 		}
 
-//		//insert実行
-//		UserService.insert(userId,userName,password);
-
-		PgUserDao user= new PgUserDao();
+		//insert実行
 		user.insert(userId,userName,password);
 
 		//users_id取得
-		User usersId = user.findUsersId(userId);
+		Integer usersId = user.findUsersId(userId);
 
 		//項目の追加
-		ItemDao item = new ItemDao(userId,null,null);
-		item.inputItem(usersId);
+		item.inputItem(new Item(1, "食費", 2));
+		item.inputItem(new Item(1, "交通費", 2));
+		item.inputItem(new Item(1, "光熱費", 2));
+		item.inputItem(new Item(1, "家賃", 2));
+		item.inputItem(new Item(1, "医療費", 2));
+		item.inputItem(new Item(1, "給料", 1));
 
 		session.invalidate(); // クリア
 		return "completeAccount";

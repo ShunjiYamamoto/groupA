@@ -39,6 +39,12 @@ public class UserServiceImpl implements UserService{
 	}
 
 
+	@Override
+	public Integer findUsersId(String userId) {
+		return userDao.findUsersId(userId);
+	}
+
+
 //	@Override
 //	public boolean deleteGet(String userId, String password) {
 //		List<User> list = userDao.deleteGet(userId, password);

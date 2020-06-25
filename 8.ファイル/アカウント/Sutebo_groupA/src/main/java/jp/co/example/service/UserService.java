@@ -12,6 +12,8 @@ public interface UserService {
 	public User findById(String userId);
 	public int insert(String userId, String userName, String password);
 
+	public Integer findUsersId(String userId);
+
 
 //	public List<User> find (User user);
 
