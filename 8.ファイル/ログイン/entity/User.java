@@ -1,5 +1,7 @@
 package jp.co.example.entity;
 
+import java.sql.Date;
+
 public class User {
 
 	private String userId;
@@ -7,6 +9,8 @@ public class User {
 	private String password;
 	private Integer usersId;
 	private boolean userDelete;
+	private Date lastLoginDate;
+
 
 	@Override
 	public String toString() {
@@ -57,5 +61,11 @@ public class User {
 
 	public void setUserDelete(boolean userDelete) {
 		this.userDelete = userDelete;
+	}
+	public Date getLastLoginDate() {
+		return lastLoginDate;
+	}
+	public void setLastLoginDate(Date lastLoginDate) {
+		this.lastLoginDate = lastLoginDate;
 	}
 }
