@@ -84,9 +84,6 @@ public class AccountController {
 		String userName = (String) session.getAttribute("userName");  // 取得
 		String password = (String) session.getAttribute("password");  // 取得
 
-		System.out.println("password:" + password);
-		System.out.println("Repassword:" + form2.getRePassword());
-
 		if(ParamUtil.isNullOrEmpty(form2.getRePassword()) == true) {
 			model.addAttribute("msg_rePassword", "Password確認が入力されていません");
 			return "confirmAccount";
