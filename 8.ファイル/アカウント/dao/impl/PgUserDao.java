@@ -88,7 +88,8 @@ public class PgUserDao implements UserDao{
 
 	}
 
-	public User findUsersId(String userId) {
+	@Override
+	public Integer findUsersId(String userId) {
 
 		String sql = "SELECT users_id FROM users WHERE user_id =:userId";
 
@@ -97,7 +98,9 @@ public class PgUserDao implements UserDao{
 
 		List<User> resultList = jdbcTemplate.query(sql, param,new BeanPropertyRowMapper<User>(User.class));
 
-		return resultList.get(0);
+		System.out.println("resultList:" + resultList);
+
+		return resultList.get(0).getUsersId();
 	}
 }
 
