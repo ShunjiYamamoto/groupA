@@ -1,0 +1,239 @@
+/* -------------------------------------------------------- */
+/* 全ページ共有部分 */
+
+body{
+    margin: 0 100px;
+    background-image: url("../img/background.png");
+    background-size: cover;
+}
+
+.bg-opacity{
+    background: rgba(255,255,255,0.5);
+    height: 100%;
+}
+
+#header{
+    padding: 5px;
+    border-bottom: 1px solid black;
+    text-align: left;
+}
+
+#systemName{
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+    font-weight:bold;
+    background: linear-gradient(transparent 70%, #FFFF00 90% );
+}
+
+.systemNameTitle{
+    margin-left: 50px;
+    font-size: 40px;
+    text-align: left;
+}
+
+h2{
+    text-align: center;
+    margin: 30px auto;
+}
+
+.headerIcon{
+    display: inline-block;
+}
+
+.headerBtn{
+    float: right;
+    padding-top: 50px;
+    margin-left:10px;
+}
+/* ------------------------------------------------------------------------- */
+
+.pieChart{
+	width:60%;
+	margin:0 auto;
+	margin-top:30px;
+}
+
+#top-img,#topMessage{
+    font-family: Meiryo UI;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+#topMessage{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+#topBtn{
+
+    margin-top: 30px;
+
+}
+
+#mainBtn{
+    margin-right: 20px;
+}
+
+#createAccount{
+    margin-left: 20px;
+}
+
+#backBtn{
+    margin-left: 20px;
+}
+
+.errorMsg{
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.inputForm{
+    margin-bottom: 30px;
+}
+
+.main {
+
+    text-align: center;
+}
+
+.confirmMsg{
+    color: red;
+    font-weight: bold;
+}
+
+ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+
+label {
+    margin-right: 10px;
+    width:130px;
+    float: left;
+}
+
+ul {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.completeAcount {
+    padding-top: 50px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+input#button {
+    display: block;
+    margin: 0 auto;
+}
+
+.box {
+    margin:0 auto;
+    width:500px;
+    border-style: solid;
+}
+
+.paymentTable{
+    border-collapse: collapse;
+    border:1px solid #333;
+    margin: 0 auto;
+}
+
+table{
+    margin: 0 auto;
+}
+
+.addButton{
+    margin-left: 5px;
+
+}
+
+.editItemBox{
+    margin-bottom: 5px;
+}
+
+.back{
+    margin-right: 300px;
+}
+
+.calendarPageElement{
+	padding-bottom:30px;
+}
+
+.calendarPage table{
+
+		width: 900px;
+	background: white;
+	border: 2px black solid;
+	border-collapse: collapse;
+	padding-bottom:10px;
+
+}
+
+.calendarPage th{
+
+	border: 1px black solid;
+	background: #CCFFFF;
+
+}
+
+.calendarPage td{
+
+	border: 1px black solid;
+	text-align: right;
+	padding: 10px;
+	height:80px;
+
+}
+
+.totalPage{
+	margin-left:100px;
+}
+
+.totalPage table{
+	width: 300px;
+	background: white;
+	border: 2px black solid;
+	border-collapse: collapse;
+	padding-bottom:10px;
+}
+
+.totalPage td{
+	border: 1px black solid;
+	text-align: right;
+	font-weight: bolder;
+}
+
+.eachMoney table{
+	width: 200px;
+	background: white;
+	border: 2px black solid;
+	border-collapse: collapse;
+	padding-bottom:10px;
+}
+
+.eachMoney th{
+
+ 	border: 1px black solid;
+	background: #CCFFFF;
+
+}
+
+.eachMoney td{
+	border: 1px black solid;
+	text-align: right;
+	font-weight: bolder;
+}
+
+#titleAndTotal{
+	margin-left:600px;
+
+}
+
+#inlineA{
+	display:inline-block;
+}
