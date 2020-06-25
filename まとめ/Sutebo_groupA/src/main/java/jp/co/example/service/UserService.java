@@ -1,5 +1,7 @@
 package jp.co.example.service;
 
+import java.util.Date;
+
 public interface UserService {
 
 	//パスワードを取得
@@ -16,5 +18,9 @@ public interface UserService {
 
 	//ユーザーの全データ削除（表面だけ）
 	public void updateDelete(String userId);
+
+	public String findByToken(String usersId);
+
+	public int update(String userId, String lineToken, Integer hour, Integer minute, boolean lineNoticeOn, Date date);
 
 }

@@ -1,6 +1,6 @@
 package jp.co.example.entity;
 
-import java.util.Calendar;
+import java.security.Timestamp;
 import java.util.Date;
 
 public class User {
@@ -13,12 +13,12 @@ public class User {
 	private boolean userDelete;
 	private Date lastLoginDate;
 	private String lineToken;
-	private Calendar lineTime;
+	private Timestamp lineTime;
 	private boolean lineNoticeOn ;
 
 	public User() {}
 
-	public User(Integer usersId,String userId,String userName,String password,boolean userDelete,Date lastLoginDate,String lineToken,Calendar lineTime,boolean lineNoticeOn) {
+	public User(Integer usersId,String userId,String userName,String password,boolean userDelete,Date lastLoginDate,String lineToken,Timestamp lineTime,boolean lineNoticeOn) {
 		this.usersId = usersId;
 		this.userId = userId;
 		this.userName = userName;
@@ -28,6 +28,12 @@ public class User {
 		this.lineToken = lineToken;
 		this.lineTime = lineTime;
 		this.lineNoticeOn = lineNoticeOn;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + userId + ", name=" + userName + ", password=" + password
+					+ ",lineToken=" + lineToken +"]";
 	}
 
 	public Integer getUsersId() {
@@ -79,10 +85,10 @@ public class User {
 		this.lineToken = lineToken;
 	}
 
-	public Calendar getLineTime() {
+	public Timestamp getLineTime() {
 		return this.lineTime;
 	}
-	public void setLineTime(Calendar lineTime) {
+	public void setLineTime(Timestamp lineTime) {
 		this.lineTime = lineTime;
 	}
 

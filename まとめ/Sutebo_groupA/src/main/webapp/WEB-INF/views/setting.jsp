@@ -12,7 +12,7 @@
 <body>
 
 <h1>設定</h1>
-	<a href="login.jsp" style="border: 2px solid;" class="btn">忘れ防止</a><br>
+	<a href="line" style="border: 2px solid;" class="btn">忘れ防止</a><br>
 	<a href="displayNoticeMonthSetting" style="border: 2px solid;" class="btn">支払い</a><br>
 	<a href="inputUpdateName" style="border: 2px solid;" class="btn">ユーザー名変更</a><br>
 	<a href="inputUpdatePass" style="border: 2px solid;" class="btn">パスワード変更</a><br>
