@@ -47,11 +47,17 @@
 					<th>金額</th>
 				</tr>
 				<tbody>
-					<form:form action="fixMoney" modelAttribute="fixMoneyForm" method="post">
+					<form:form action="fixMoney" modelAttribute="fixMoneyForm"
+						method="post">
+
+						<c:if test="${dairyMoney != '0'}">
+							<form:button>修正
+						</form:button>
+						</c:if>
 						<c:choose>
 							<c:when test="${dairyMoney =='0'}">
 								<tr>
-									<td></td>
+<td>　</td>
 									<td>NoData</td>
 									<td>0</td>
 								</tr>
@@ -59,7 +65,9 @@
 							<c:when test="${dairyMoney != '0'}">
 								<c:forEach items="${dairyMoney}" var="list" varStatus="status">
 									<tr>
-										<td><form:radiobutton path="itemName" value="${list.itemName}" checked = "${status.first?\"checked\":\"\"}" /></td>
+										<td><form:radiobutton path="itemName"
+												value="${list.itemName}"
+												checked="${status.first?\"checked\":\"\"}" /></td>
 										<td class="itemName">${list.itemName}</td>
 										<td class="amount">${list.amount}</td>
 									</tr>
@@ -68,11 +76,11 @@
 						</c:choose>
 
 						<form:hidden path="inputDate" value="${date}" />
-<%-- 						<form:hidden path="itemName" value="${list.itemName}" /> --%>
+						<%-- 						<form:hidden path="itemName" value="${list.itemName}" /> --%>
 
- 						<form:button>修正
-						</form:button>
+
 					</form:form>
+
 				</tbody>
 			</table>
 			<a href="calendar?date=2020-06">戻る</a>
@@ -88,7 +96,7 @@
 
 	</div>
 
-<%-- 							<c:forEach items="${dairyMoney}" var="list">
+	<%-- 							<c:forEach items="${dairyMoney}" var="list">
 								<tr>
 									<td><input type="radio" name="button"
 										value="${list.itemName}" />

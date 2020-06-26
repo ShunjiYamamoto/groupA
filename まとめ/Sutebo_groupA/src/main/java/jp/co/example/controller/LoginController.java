@@ -61,7 +61,7 @@ public class LoginController {
 
 
 	//ログイン処理（ログイン画面のログインボタン押下）
-	@RequestMapping(value = "/menu", method = RequestMethod.POST)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@Validated @ModelAttribute("loginForm") LoginForm form, BindingResult bindingResult, Model model) {
 
 		String errMsg = messageSource.getMessage("login.error", null, Locale.getDefault());

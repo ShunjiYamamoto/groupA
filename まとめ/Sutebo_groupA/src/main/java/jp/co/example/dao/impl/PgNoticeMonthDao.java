@@ -82,7 +82,9 @@ public class PgNoticeMonthDao implements NoticeMonthDao{
 	@Override
 	public List<MonthSum> monthSum(int usersId){
 
-		String sql ="select  " +
+		String sql ="select coalesce(month_income_sum,0) month_income_sum ,coalesce(month_spending_sum,0) month_spending_sum,coalesce(month_income_spending_difference_sum,0)month_income_spending_difference_sum  " +
+				"from "+
+				"(select  " +
 				"sum( " +
 				"		case " +
 				"			when income_outgo = 1 then amount " +
@@ -101,7 +103,7 @@ public class PgNoticeMonthDao implements NoticeMonthDao{
 				"from money m  " +
 				"join items i on m.items_id = i.items_id " +
 				"where input_date between '2020/01/01' and '2020/12/31' " +
-				"and users_id = :usersId ";
+				"and users_id = :usersId ) h ";
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("usersId", usersId);

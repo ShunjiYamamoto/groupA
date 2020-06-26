@@ -38,21 +38,24 @@ public class IndexController {
 	    return "createAccount";
 	}*/
 
-	/*    @RequestMapping("/menu")
+	    @RequestMapping("/menu")
 	public String menu(Model model) {
 		displayNotice(model);
 	    return "menu";
-	}*/
+	}
 
 	@RequestMapping("/deleteNoticeMonth")
 	public String deleteNotice(@RequestParam("noticeId") Integer noticeId, Model model) {
 		noticeMonthService.deleteNoticeMonth(noticeId);
 
+		displayNotice(model);
+		return "menu";
+	}
+
+	public void displayNotice(Model model) {
 		User user = (User) session.getAttribute("user");
 		List<NoticeMonth> noticeList = noticeMonthService.findByUsersId(user.getUsersId());
 		model.addAttribute("noticeList", noticeList);
-
-		return "menu";
 	}
 
 

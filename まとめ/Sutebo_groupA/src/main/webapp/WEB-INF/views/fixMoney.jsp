@@ -26,50 +26,52 @@
 	<h2>日データ修正</h2>
 
 
-		<h3>${inputDate}</h3>
+	<h3>${inputDate}</h3>
 
-  <c:if test="${not empty errorMsg}">
-    <p style=color:red>${errorMsg}</p>
-  </c:if>
+	<c:if test="${not empty errorMsg}">
+		<p style="color: red">${errorMsg}</p>
+	</c:if>
 
-		<form:form action="completeFixMoney" method="post" modelAttribute="fixMoneyForm">
+	<form:form action="completeFixMoney" method="post"
+		modelAttribute="fixMoneyForm">
 
-			<table border="1">
-				<tr>
-					<th>項目</th>
-					<th>金額</th>
-					<th>修正金額内容</th>
-				</tr>
-				<tbody>
+		<table border="1">
+			<tr>
+				<th>項目</th>
+				<th>金額</th>
+				<th>修正金額内容</th>
+			</tr>
+			<tbody>
 
 				<tr>
 					<td>${ItemName}</td>
 					<td>${amount}</td>
- 					<td><form:input path="amount"/><form:errors path="amount" cssStyle="color: red"/></td>
+					<td><form:input path="amount" />
+						<form:errors path="amount" cssStyle="color: red" /></td>
 				</tr>
-				</tbody>
-			</table>
+			</tbody>
+		</table>
 
-			<br>
-			<form:hidden path = "inputDate" value = "${inputDate}" />
-			<form:hidden path = "itemName" value = "${ItemName}" />
-			<form:button>確定</form:button>
+		<br>
+		<form:hidden path="inputDate" value="${inputDate}" />
+		<form:hidden path="itemName" value="${ItemName}" />
+		<form:button>確定</form:button>
 
 	</form:form>
-			<a href="dairyData?date=${inputDate}">戻る</a>
+	<a href="dairyData?date=${inputDate}">戻る</a>
 
 
 
-			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-				integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-				crossorigin="anonymous"></script>
-			<script
-				src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-				integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-				crossorigin="anonymous"></script>
-			<script
-				src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-				integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-				crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
 </body>
 </html>
