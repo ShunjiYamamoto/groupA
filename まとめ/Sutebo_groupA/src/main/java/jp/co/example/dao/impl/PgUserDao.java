@@ -143,7 +143,7 @@ public class PgUserDao implements UserDao{
 	@Override
 	public User findById(String userId) {
 
-		String sql = "SELECT * FROM users WHERE user_id =:userId";
+		String sql = "SELECT user_id FROM users WHERE user_id =:userId";
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("userId", userId);

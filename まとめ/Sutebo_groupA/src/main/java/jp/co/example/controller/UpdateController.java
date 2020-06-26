@@ -74,14 +74,20 @@ public class UpdateController {
 
 	@RequestMapping(value="/userDateAllDelete" , method=RequestMethod.POST)
 	public String userDeleteUpdate(@Validated @ModelAttribute("delete")  ConfirmPasswordForm form,BindingResult bindingResult, Model model) {
+
+		User user = (User) session.getAttribute("user");
+
 		if(bindingResult.hasErrors()){
 			model.addAttribute("b","b");
 			return "deleteUser";
-		}else if(!(form.getPassword().equals(userService.passwordGet("taiyo")))) {
+		}else if(!(form.getPassword().equals(userService.passwordGet(user.getUserId())))) {
 			model.addAttribute("passwordChange","パスワードが違います");
 			return "deleteUser";
 		}else {
-			userService.updateDelete("taiyo");
+
+
+
+			userService.updateDelete(user.getUserId());
 			return "confirmDeleteUser";
 		}
 	}

@@ -11,16 +11,16 @@ public class User {
 	private String userId;
 	private String userName;
 	private String password;
-	private boolean userDelete;
+	private Boolean userDelete;
 	private Date lastLoginDate;
 	private String lineToken;
 	private Timestamp lineTime;
-	private boolean lineNoticeOn ;
+	private Boolean lineNoticeOn ;
 	private String rePassword;
 
 	public User() {}
 
-	public User(Integer usersId,String userId,String userName,String password,boolean userDelete,Date lastLoginDate,String lineToken,Timestamp lineTime,boolean lineNoticeOn) {
+	public User(Integer usersId,String userId,String userName,String password,Boolean userDelete,Date lastLoginDate,String lineToken,Timestamp lineTime,Boolean lineNoticeOn) {
 		this.usersId = usersId;
 		this.userId = userId;
 		this.userName = userName;
@@ -66,10 +66,10 @@ public class User {
 		this.password = password;
 	}
 
-	public boolean getUserDelete() {
+	public Boolean getUserDelete() {
 		return this.userDelete;
 	}
-	public void setUserDelete(boolean userDelete) {
+	public void setUserDelete(Boolean userDelete) {
 		this.userDelete = userDelete;
 	}
 
@@ -94,10 +94,10 @@ public class User {
 		this.lineTime = lineTime;
 	}
 
-	public boolean getLineNoticeOn() {
+	public Boolean getLineNoticeOn() {
 		return this.lineNoticeOn;
 	}
-	public void setLineNoticeOn(boolean lineNoticeOn) {
+	public void setLineNoticeOn(Boolean lineNoticeOn) {
 		this.lineNoticeOn = lineNoticeOn;
 	}
 
