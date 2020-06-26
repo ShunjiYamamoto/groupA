@@ -37,14 +37,18 @@ public class DairyDataController {
 
         List<ItemNameAndMoney> dairyMoney = moneyService.findDairyData(user.getUsersId(),date);
 
+        List<ItemNameAndMoney> dairyDataForGraph = moneyService.findDairyDataForGraph(user.getUsersId(),date);
+
 		if(dairyMoney.isEmpty()) {
 
 			request.setAttribute("dairyMoney", 0);
+			request.setAttribute("dairyDataForGraph", 0);
 
 		}else {
 
 		//その日のデータをリクエストスコープに保存。
 		request.setAttribute("dairyMoney", dairyMoney);
+		request.setAttribute("dairyDataForGraph", dairyDataForGraph);
 
 		}
 

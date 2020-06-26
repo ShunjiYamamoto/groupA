@@ -12,6 +12,7 @@ public interface MoneyDao {
 	public List<Money> findMoneyForCalendar(Integer usersId,Date dayStart, Date dayEnd);
 
 	public List<ItemNameAndMoney> findDairyData(Integer usersId, String date);
+	public List<ItemNameAndMoney> findDairyDataForGraph(Integer usersId, String date);
 
 	public List<ItemNameAndMoney> findMonthlyData(Integer usersId,Date dayStart, Date dayEnd);
 

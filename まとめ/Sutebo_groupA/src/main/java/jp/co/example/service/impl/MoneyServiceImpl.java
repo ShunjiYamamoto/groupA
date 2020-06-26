@@ -30,6 +30,11 @@ public class MoneyServiceImpl implements MoneyService {
 		}
 
 		@Override
+		public List<ItemNameAndMoney> findDairyDataForGraph(Integer usersId, String date){
+			return moneyDao.findDairyDataForGraph(usersId, date);
+		}
+
+		@Override
 		public List<ItemNameAndMoney> findMonthlyData(Integer usersId,Date dayStart, Date dayEnd){
 			return moneyDao.findMonthlyData(usersId, dayStart, dayEnd);
 		}

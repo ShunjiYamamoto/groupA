@@ -64,8 +64,8 @@
 										<td><form:radiobutton path="itemName"
 												value="${list.itemName}"
 												checked="${status.first?\"checked\":\"\"}" /></td>
-										<td class="itemName">${list.itemName}</td>
-										<td class="amount">${list.amount}</td>
+										<td>${list.itemName}</td>
+										<td>${list.amount}</td>
 									</tr>
 								</c:forEach>
 							</c:when>
@@ -81,6 +81,18 @@
 			</form:form>
 			<a href="calendar?date=2020-${datem}">戻る</a>
 
+
+			<table hidden>
+				<c:if test="${dairyDataForGraph != '0'}">
+					<c:forEach items="${dairyDataForGraph}" var="list"
+						varStatus="status">
+						<tr id="forGraph">
+							<td class="itemName">${list.itemName}</td>
+							<td class="amount">${list.amount}</td>
+						</tr>
+					</c:forEach>
+				</c:if>
+			</table>
 			<div class="pieChart">
 				<canvas id="myPieChartForDairy"></canvas>
 			</div>

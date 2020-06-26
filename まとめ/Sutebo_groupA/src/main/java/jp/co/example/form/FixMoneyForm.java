@@ -2,6 +2,7 @@ package jp.co.example.form;
 
 import java.sql.Date;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 public class FixMoneyForm {
@@ -10,6 +11,7 @@ public class FixMoneyForm {
 	private Date inputDate;
 	private String itemName;
 	@NotNull(message = "金額を入力して下さい。")
+	@Min(0)
 	private Integer amount;
 	private Integer fixMoney;
 

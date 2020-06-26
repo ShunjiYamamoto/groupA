@@ -45,7 +45,7 @@
 		<div class="main">
 
 			<c:if test="${not empty errMsg}">
-				<p class="error">${fn:escapeXml(errMsg)}</p>
+				<font color="red"><p class="error">${fn:escapeXml(errMsg)}</p></font>
 			</c:if>
 
 
@@ -56,11 +56,12 @@
 						<div class="inputForm">
 
 							<li class="userId"><label>ユーザーID：</label> <form:input
-									path="userId" size="25" /> <form:errors path="userId"
-									class="error" /></li>
+									path="userId" size="25" />
+									 <font color="red"><form:errors path="userId" class="error" /></font>
+									</li>
 							<li class="password"><label>パスワード：</label> <form:password
-									path="password" size="25" /> <form:errors path="password"
-									class="error" /></li>
+									path="password" size="25" />  <font color="red"><form:errors path="password"
+									class="error" /></font> </li>
 
 						</div>
 

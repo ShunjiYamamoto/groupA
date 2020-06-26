@@ -2,6 +2,8 @@ package jp.co.example.service;
 
 import java.util.Date;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import jp.co.example.entity.User;
 
 public interface UserService {
@@ -37,7 +39,7 @@ public interface UserService {
 
 	public Integer findUsersId(String userId);
 
-//	public Integer createAccount(String userId, String userName, String password );
-
+	@Transactional
+	public void createAccount(String userId, String userName, String password );
 
 }

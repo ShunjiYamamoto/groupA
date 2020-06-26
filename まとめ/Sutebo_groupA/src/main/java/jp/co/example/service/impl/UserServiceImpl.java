@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jp.co.example.dao.UserDao;
+import jp.co.example.entity.Item;
 import jp.co.example.entity.User;
+import jp.co.example.service.ItemService;
 import jp.co.example.service.UserService;
 
 @Service
@@ -15,6 +17,9 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private UserDao userDao;
+
+	@Autowired
+	private ItemService itemService;
 
 	@Override
 	public String passwordGet(String userId) {
@@ -87,6 +92,21 @@ public class UserServiceImpl implements UserService{
 		@Override
 		public Integer findUsersId(String userId) {
 			return userDao.findUsersId(userId);
+		}
+
+		@Override
+		public void createAccount(String userId, String userName, String password ) {
+
+			userDao.insert(userId, userName, password);
+			Integer usersId = userDao.findUsersId(userId);
+			itemService.inputItem(new Item(usersId, "食費", 2));
+			itemService.inputItem(new Item(usersId, "交通費", 2));
+			itemService.inputItem(new Item(usersId, "光熱費", 2));
+			itemService.inputItem(new Item(usersId, "家賃", 2));
+			itemService.inputItem(new Item(usersId, "医療費", 2));
+			itemService.inputItem(new Item(usersId, "給料", 1));
+			userDao.updateLoginDate(usersId, new Date(System.currentTimeMillis()));
+
 		}
 
 }

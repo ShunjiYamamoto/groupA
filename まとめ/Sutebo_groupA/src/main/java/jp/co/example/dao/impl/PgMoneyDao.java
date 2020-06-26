@@ -34,6 +34,13 @@ import jp.co.example.form.InputMoneyForm;
 				"on i.items_id = m.items_id " +
 				"where users_id = :usersId and input_date =:date";
 
+		private static final String SELECTDAIRYDATAFORGRAPH = "select item_name, amount " +
+				"from items i " +
+				"join money m " +
+				"on i.items_id = m.items_id " +
+				"where users_id = :usersId and input_date =:date "+
+				"and i.income_outgo = 2";
+
 
 		private static final String SELECT_TOTAL_ITEMS_OF_MONTH ="select item_name, sum(amount) as amount " +
 				"from items " +
@@ -89,6 +96,31 @@ import jp.co.example.form.InputMoneyForm;
 				MapSqlParameterSource param = new MapSqlParameterSource();
 
 				String sql = SELECTDAIRYDATA;
+
+				param.addValue("usersId", usersId);
+				param.addValue("date", sqlDate);
+
+				List<ItemNameAndMoney> resultList = jdbcTemplate.query(sql, param,
+						new BeanPropertyRowMapper<ItemNameAndMoney>(ItemNameAndMoney.class));
+
+				return resultList;
+
+
+			}
+
+			@Override
+			public List<ItemNameAndMoney> findDairyDataForGraph(Integer usersId, String date){
+
+				System.out.println("dao:"+date);
+				System.out.println("dao:"+date);
+
+				Date sqlDate = java.sql.Date.valueOf(date);
+
+				System.out.println("date型:"+sqlDate);
+
+				MapSqlParameterSource param = new MapSqlParameterSource();
+
+				String sql = SELECTDAIRYDATAFORGRAPH;
 
 				param.addValue("usersId", usersId);
 				param.addValue("date", sqlDate);

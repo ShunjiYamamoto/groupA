@@ -1,7 +1,5 @@
 package jp.co.example.controller;
 
-import java.sql.Date;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import jp.co.example.dao.impl.PgItemDao;
 import jp.co.example.dao.impl.PgUserDao;
-import jp.co.example.entity.Item;
 import jp.co.example.entity.User;
 import jp.co.example.form.AccountForm;
 import jp.co.example.form.ConfirmPasswordForm;
@@ -107,21 +104,23 @@ public class AccountController {
 			return "confirmAccount";
 		}
 
-		//insert実行
-		userService.insert(userId,userName,password);
+		/*		//insert実行
+				userService.insert(userId,userName,password);
 
-		//users_id取得
-		Integer usersId = userService.findUsersId(userId);
+				//users_id取得
+				Integer usersId = userService.findUsersId(userId);
 
-		//項目の追加
-		item.inputItem(new Item(usersId, "食費", 2));
-		item.inputItem(new Item(usersId, "交通費", 2));
-		item.inputItem(new Item(usersId, "光熱費", 2));
-		item.inputItem(new Item(usersId, "家賃", 2));
-		item.inputItem(new Item(usersId, "医療費", 2));
-		item.inputItem(new Item(usersId, "給料", 1));
+				//項目の追加
+				item.inputItem(new Item(usersId, "食費", 2));
+				item.inputItem(new Item(usersId, "交通費", 2));
+				item.inputItem(new Item(usersId, "光熱費", 2));
+				item.inputItem(new Item(usersId, "家賃", 2));
+				item.inputItem(new Item(usersId, "医療費", 2));
+				item.inputItem(new Item(usersId, "給料", 1));
 
-		userService.updateLoginDate(usersId, new Date(System.currentTimeMillis()));
+				userService.updateLoginDate(usersId, new Date(System.currentTimeMillis()));*/
+
+				userService.createAccount(userId, userName, password);
 
 		session.invalidate(); // クリア
 		return "completeAccount";
