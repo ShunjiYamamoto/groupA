@@ -6,6 +6,7 @@ import java.util.List;
 
 import jp.co.example.entity.ItemNameAndMoney;
 import jp.co.example.entity.Money;
+import jp.co.example.form.InputMoneyForm;
 
 public interface MoneyService {
 
@@ -16,4 +17,5 @@ public interface MoneyService {
 	public List<Money> findToTalOutgoOfMonth(Integer usersId,Date dayStart, Date dayEnd);
 	public List<Money> findToTalIncomeOfMonth(Integer usersId,Date dayStart, Date dayEnd);
 
+	public void insertMoneys(InputMoneyForm form);
 }

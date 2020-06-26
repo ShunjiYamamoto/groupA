@@ -40,24 +40,20 @@
 
 		<div class="main">
 
-			<table border="1">
-				<tr>
-					<th></th>
-					<th>項目</th>
-					<th>金額</th>
-				</tr>
-				<tbody>
-					<form:form action="fixMoney" modelAttribute="fixMoneyForm"
-						method="post">
+			<form:form action="fixMoney" modelAttribute="fixMoneyForm"
+				method="post">
 
-						<c:if test="${dairyMoney != '0'}">
-							<form:button>修正
-						</form:button>
-						</c:if>
+				<table border="1">
+					<tr>
+						<th></th>
+						<th>項目</th>
+						<th>金額</th>
+					</tr>
+					<tbody>
 						<c:choose>
 							<c:when test="${dairyMoney =='0'}">
 								<tr>
-<td>　</td>
+									<td>&nbsp;</td>
 									<td>NoData</td>
 									<td>0</td>
 								</tr>
@@ -74,16 +70,16 @@
 								</c:forEach>
 							</c:when>
 						</c:choose>
+					</tbody>
+				</table>
+				<form:hidden path="inputDate" value="${date}" />
 
-						<form:hidden path="inputDate" value="${date}" />
-						<%-- 						<form:hidden path="itemName" value="${list.itemName}" /> --%>
+				<c:if test="${dairyMoney != '0'}">
+					<form:button>修正</form:button>
+				</c:if>
 
-
-					</form:form>
-
-				</tbody>
-			</table>
-			<a href="calendar?date=2020-06">戻る</a>
+			</form:form>
+			<a href="calendar?date=2020-${datem}">戻る</a>
 
 			<div class="pieChart">
 				<canvas id="myPieChartForDairy"></canvas>
@@ -95,15 +91,6 @@
 		</div>
 
 	</div>
-
-	<%-- 							<c:forEach items="${dairyMoney}" var="list">
-								<tr>
-									<td><input type="radio" name="button"
-										value="${list.itemName}" />
-									<td class="itemName">${list.itemName}</td>
-									<td class="amount">${list.amount}</td>
-								</tr>
-							</c:forEach> --%>
 
 </body>
 </html>

@@ -114,8 +114,9 @@ public class FixMoneyController {
     		return "fixMoney";
     	}
 
+		User user = (User) session.getAttribute("user");
 
-	   Integer Id = 1;
+		Integer Id = user.getUsersId();
 
 	   System.out.println("amount"+form.getAmount());
 	   System.out.println("itemName"+form.getItemName());

@@ -18,4 +18,6 @@ public interface ItemService {
 
 	void reInputItem(Integer itemsId);
 
+	String itemsIdConvertItemName(Integer itemsId);
+
 }

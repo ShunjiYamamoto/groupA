@@ -79,5 +79,14 @@ public class PgItemDao implements ItemDao {
 
 		jdbcTemplate.update(sql, param);
 	}
+
+	@Override
+	public List<Item> itemNameFindForItemsId(Integer itemsId) {
+		final String ITEMNAME_FIND_FOR_ITEMSID = "SELECT * FROM items WHERE items_id = :itemsId";
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("itemsId", itemsId);
+		List<Item> result = jdbcTemplate.query(ITEMNAME_FIND_FOR_ITEMSID,param,new BeanPropertyRowMapper<Item>(Item.class));
+		return result;
+	}
 }
 
