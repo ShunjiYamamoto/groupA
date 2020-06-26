@@ -30,11 +30,14 @@
 		<c:if test="${not empty b}">
 			<form:form action="userUpdatePass" modelAttribute="pass">
 				<p>
-					<div>パスワード：<form:input path="pass" type="password"/>
+					<div>現在のパスワード：<form:input path="nowPass" type="password"/><b style =color:red>${passwordNowChange}</b>
+					<form:errors path="nowPass" cssStyle="color: red"/></div>
+
+					<div>新しいパスワード：<form:input path="pass" type="password"/>
 					<form:errors path="pass" cssStyle="color: red"/></div>
 
 				<br>
-				<dvi>パスワード（再確認）：<form:input path="newPass" type="password"/><b style =color:red>${passwordChange}</b>
+				<dvi>新しいパスワード（再確認）：<form:input path="newPass" type="password"/><br><b style =color:red>${passwordChange}</b>
 				<form:errors path="newPass" cssStyle="color: red"/></div>
 				</p>
 				<form:button>修正</form:button>

@@ -108,10 +108,10 @@ public class AccountController {
 		}
 
 		//insert実行
-		user.insert(userId,userName,password);
+		userService.insert(userId,userName,password);
 
 		//users_id取得
-		Integer usersId = user.findUsersId(userId);
+		Integer usersId = userService.findUsersId(userId);
 
 		//項目の追加
 		item.inputItem(new Item(usersId, "食費", 2));

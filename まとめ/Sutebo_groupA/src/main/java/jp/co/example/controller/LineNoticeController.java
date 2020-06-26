@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import jp.co.example.entity.User;
 import jp.co.example.form.LineNoticeForm;
 import jp.co.example.service.UserService;
 import jp.co.example.util.ParamUtil;
@@ -35,10 +36,14 @@ public class LineNoticeController {
 	@RequestMapping("/line")
 	public String lineSet(@ModelAttribute("test") LineNoticeForm form, Model model) {
 
-		//Http Sessionを使用して保存
-		session.setAttribute("userId","yamamoto");
 
-		String userId = (String) session.getAttribute("userId");  // 取得
+
+//		//Http Sessionを使用して保存
+//		session.setAttribute("userId",);
+
+		User user = (User) session.getAttribute("user");
+
+		String userId =  user.getUserId();  // 取得
 
 		/*		User user = (User) session.getAttribute("user");  // 取得
 				String userId = user.getUserId();*/

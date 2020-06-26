@@ -36,4 +36,8 @@ public interface UserService {
 	public void updateLoginDate(Integer usersId, Date lastLoginDate);
 
 	public Integer findUsersId(String userId);
+
+//	public Integer createAccount(String userId, String userName, String password );
+
+
 }

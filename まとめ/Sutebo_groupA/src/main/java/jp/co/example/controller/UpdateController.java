@@ -50,27 +50,30 @@ public class UpdateController {
 
 	@RequestMapping(value="/userUpdatePass" , method=RequestMethod.POST)
     public String updatePassword(@Validated @ModelAttribute("pass") UpdatePasswordForm form,BindingResult bindingResult, Model model) {
+		User user = (User) session.getAttribute("user");
+		System.out.println(userService.passwordGet(user.getUserId()));
 		if(bindingResult.hasErrors()){
 			model.addAttribute("b","b");
 			return "inputUpdate";
+		}else if(!(form.getNowPass().equals(userService.passwordGet(user.getUserId())))) {
+			model.addAttribute("b","b");
+			model.addAttribute("passwordNowChange","パスワードが一致しません");
+			return "inputUpdate";
 		}else if(!(form.getPass().equals(form.getNewPass()))){
 			model.addAttribute("b","b");
-			model.addAttribute("passwordChange","パスワードが一致しません");
+			model.addAttribute("passwordChange","新しいパスワードが一致しません");
 			return "inputUpdate";
 		}else {
-			User user = (User) session.getAttribute("user");
 			userService.updatePassword(form.getNewPass(),user.getUserId());
 			model.addAttribute("newUesrName",userService.userNameGet(user.getUserId()));
 			model.addAttribute("newUserPassword",form.getNewPass());
 
-			user.setPassword(form.newPass);
+			user.setPassword(form.getNewPass());
 			session.setAttribute("user", user);
 
         	return "confirmUpdateUser";
         }
 	}
-
-
 
 	@RequestMapping(value="/userDateAllDelete" , method=RequestMethod.POST)
 	public String userDeleteUpdate(@Validated @ModelAttribute("delete")  ConfirmPasswordForm form,BindingResult bindingResult, Model model) {
@@ -84,8 +87,6 @@ public class UpdateController {
 			model.addAttribute("passwordChange","パスワードが違います");
 			return "deleteUser";
 		}else {
-
-
 
 			userService.updateDelete(user.getUserId());
 			return "confirmDeleteUser";

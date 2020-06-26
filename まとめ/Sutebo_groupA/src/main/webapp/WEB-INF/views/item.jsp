@@ -15,7 +15,7 @@
 
 	<div class="back">
 		<a href="./menu">メニュー</a>
-		<a href="./setting">戻る</a>
+		<a href="./inputMoney">戻る</a>
 	</div>
 
 	<h2>項目の編集</h2>
