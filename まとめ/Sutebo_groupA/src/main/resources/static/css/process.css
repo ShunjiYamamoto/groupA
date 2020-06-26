@@ -3,7 +3,7 @@
 /* 全ページ共有部分 */
 
 body{
-    margin: 0 100px;    
+    margin: 0 100px;
     background-image: url("../img/background.png");
     background-size: cover;
 }
@@ -35,7 +35,7 @@ h2{
     margin: 30px auto;
 }
 
-.main { 
+.main {
     text-align: center;
 }
 
@@ -69,6 +69,8 @@ h2{
 .headerBtn{
     float: right;
     padding-top: 50px;
+    font-size:large;
+    font-weight:bold;
 }
 
 div.solidlineandcenterdiv p {
@@ -101,4 +103,9 @@ label {
 
 .back{
     margin-left: 300px;
+}
+
+#displayUserName{
+	font-size:larger;
+	font-weight: bolder;
 }

@@ -124,6 +124,10 @@ public class LoginController {
 //			SessionInfo sessionInfo = ParamUtil.getSessionInfo(session);
 			session.setAttribute("user", user);
 
+			/*			User user = (User) session.getAttribute("user");*/
+			List<NoticeMonth> noticeList = noticeMonthService.findByUsersId(user.getUsersId());
+			model.addAttribute("noticeList", noticeList);
+
 			return "menu";
 
 		}
