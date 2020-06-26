@@ -49,9 +49,9 @@
 			</form:form>
 
 			<form:form action="confirm" modelAttribute="test2">
-			Password確認：<form:password path="rePassword" /><br>
+			パスワード再確認：<form:password path="rePassword" /><br>
 
-			<form:button>送信</form:button>
+			<form:button>確定</form:button>
 			</form:form>
 
 			<a href="createAccount" >戻る</a>

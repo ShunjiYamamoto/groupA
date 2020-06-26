@@ -24,7 +24,7 @@
             <a href = "logout"><span class="headerBtn headerIcon label label-info">ログアウト</span></a>
         </div>
 
- 		 <p>${fn:escapeXml(user.userName)}さん、こんにちは</p>
+ 		 <p id = "displayUserName">${fn:escapeXml(user.userName)}さん、こんにちは</p>
 
         <h2>メニュー</h2>
 

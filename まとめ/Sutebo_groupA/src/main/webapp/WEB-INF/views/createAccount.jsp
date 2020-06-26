@@ -44,9 +44,9 @@
 
 				ユーザーID：<form:input path="userId" /><br>
 				ユーザー名：<form:input path="userName" /><br>
-				Password：<form:password path="password" /><br>
+				パスワード：<form:password path="password" /><br>
 
-				<form:button>送信</form:button>
+				<form:button>登録</form:button>
 				</form:form>
 
 				<a href="createBack" >戻る</a>

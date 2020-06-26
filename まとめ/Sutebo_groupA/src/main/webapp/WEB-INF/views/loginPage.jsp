@@ -49,7 +49,7 @@
 			</c:if>
 
 
-			<form:form action="menu" method="post" modelAttribute="loginForm">
+			<form:form action="login" method="post" modelAttribute="loginForm">
 				<fieldset>
 					<ul>
 
