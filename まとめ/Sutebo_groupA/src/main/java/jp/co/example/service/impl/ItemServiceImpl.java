@@ -52,4 +52,11 @@ public class ItemServiceImpl implements ItemService {
 	public void reInputItem(Integer itemsId) {
 		itemDao.reInputItem(itemsId);
 	}
+
+	@Override
+	public String itemsIdConvertItemName(Integer itemsId) {
+		List<Item> itemNames = itemDao.itemNameFindForItemsId(itemsId);
+		String result = itemNames.get(0).getItemName();
+		return result;
+	}
 }

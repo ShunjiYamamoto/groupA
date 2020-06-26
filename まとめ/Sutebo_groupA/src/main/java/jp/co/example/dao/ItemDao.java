@@ -18,5 +18,7 @@ public interface ItemDao {
 
 	void reInputItem(Integer itemsId);
 
+	List<Item> itemNameFindForItemsId(Integer itemsId);
+
 
 }

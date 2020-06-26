@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import jp.co.example.dao.MoneyDao;
 import jp.co.example.entity.ItemNameAndMoney;
 import jp.co.example.entity.Money;
+import jp.co.example.form.InputMoneyForm;
 import jp.co.example.service.MoneyService;
 
 @Service
@@ -41,6 +42,11 @@ public class MoneyServiceImpl implements MoneyService {
 		@Override
 		public List<Money> findToTalIncomeOfMonth(Integer usersId,Date dayStart, Date dayEnd){
 			return moneyDao.findToTalIncomeOfMonth(usersId, dayStart, dayEnd);
+		}
+
+		@Override
+		public void insertMoneys(InputMoneyForm form){
+			moneyDao.moneyInsert(form);
 		}
 
 	}

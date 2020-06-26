@@ -8,17 +8,27 @@ public class Money {
 	private Integer itemsId;
 	private Integer amount;
 	private String itemName;
+	private Integer moneyId;
 
-	public Money(Date inputDate, Integer itemsId, Integer amount, String itemName) {
+	public Money(Date inputDate, Integer itemsId, Integer amount, String itemName, Integer moneyId) {
 		super();
 		this.inputDate = inputDate;
 		this.itemsId = itemsId;
 		this.amount = amount;
 		this.itemName = itemName;
+		this.moneyId = moneyId;
 	}
 
 	public Money() {
 
+	}
+
+	public Integer getMoneyId() {
+		return moneyId;
+	}
+
+	public void setMoneyId(Integer moneyId) {
+		this.moneyId = moneyId;
 	}
 
 	public Date getInputDate() {

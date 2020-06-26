@@ -57,10 +57,12 @@ public class DairyDataController {
         String dairyDateSession = ("2020-"+datem +"-"+dated);
 
         //その日をリクエストスコープに保存。
+        request.setAttribute("datem", datem);
         request.setAttribute("date", dairyDateSession);
         request.setAttribute("dairyDate", dairyDate);
 
     	System.out.println(date);
+    	System.out.println(datem);
 
     	return "dairyData";
 

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import jp.co.example.dao.MoneyDao;
 import jp.co.example.entity.ItemNameAndMoney;
 import jp.co.example.entity.Money;
+import jp.co.example.form.InputMoneyForm;
 
 
 	@Repository
@@ -152,6 +153,20 @@ import jp.co.example.entity.Money;
 						new BeanPropertyRowMapper<Money>(Money.class));
 
 				return resultList;
+
+			}
+
+			@Override
+			public void moneyInsert(InputMoneyForm form) {
+				final String MONEY_INSERT_SQL = "insert into money(input_date,items_id,amount) values (:date ,:itemId ,:amount ) ";
+				MapSqlParameterSource param = new MapSqlParameterSource();
+
+				param.addValue("date", form.getDate());
+				param.addValue("itemId", form.getItemsId());
+				param.addValue("amount", form.getAmount());
+
+
+				jdbcTemplate.update(MONEY_INSERT_SQL, param);
 
 			}
 
