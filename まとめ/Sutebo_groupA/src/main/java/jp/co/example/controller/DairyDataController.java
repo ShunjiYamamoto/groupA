@@ -32,6 +32,7 @@ public class DairyDataController {
 
 //    	Integer testId = 1;
     	User user = (User) session.getAttribute("user");
+    	String year = (String) session.getAttribute("year");
 
 //    	結合時にtestIdをuser.getUsersIdに変更する。
 
@@ -58,7 +59,7 @@ public class DairyDataController {
         String datem = msdf.format(d);
         String dated = dsdf.format(d);
         String dairyDate = (datem +"月"+dated+"日の内訳");
-        String dairyDateSession = ("2020-"+datem +"-"+dated);
+        String dairyDateSession = (year+"-"+datem +"-"+dated);
 
         //その日をリクエストスコープに保存。
         request.setAttribute("datem", datem);

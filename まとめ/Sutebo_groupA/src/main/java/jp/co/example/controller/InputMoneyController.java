@@ -91,10 +91,13 @@ public class InputMoneyController {
 		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy年MM月");
 		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy年MM月dd日");
 		SimpleDateFormat sdf3 = new SimpleDateFormat("MM月dd日");
+		SimpleDateFormat sdf4 = new SimpleDateFormat("yyyy");
+
 		model.addAttribute("moneyDateYearAndMonth", sdf1.format(lastMoneyInsertDate));
 		model.addAttribute("moneyDateFull", sdf2.format(lastMoneyInsertDate));
 		model.addAttribute("moneyDateMonthAndDate", sdf3.format(lastMoneyInsertDate));
 		model.addAttribute("moneyDateTypeInsert", dateFormatTypeInsert.format(lastMoneyInsertDate));
+		session.setAttribute("year", sdf4.format(lastMoneyInsertDate));
 		return "completeMoneyInput";
 	}
 

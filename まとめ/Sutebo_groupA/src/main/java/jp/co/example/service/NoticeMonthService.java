@@ -7,17 +7,17 @@ import jp.co.example.entity.NoticeMonth;
 
 public interface NoticeMonthService {
 
-	public List<MonthSum> monthDataSum(int usersId);
+	public List<MonthSum> monthDataSum(int usersId, String year);
 
 
 	//1年の収入合計
-	public int monthSumIncome(int usersId);
+	public int monthSumIncome(int usersId,String year);
 
 	//1年の支出合計
-	public int monthSumSpending(int usersId);
+	public int monthSumSpending(int usersId,String year);
 
 	//1年の支出合計
-	public int monthSumIncomeSpendingDifference(int usersId);
+	public int monthSumIncomeSpendingDifference(int usersId,String year);
 
 	void inputNoticeMonth(NoticeMonth noticeMonth);
 

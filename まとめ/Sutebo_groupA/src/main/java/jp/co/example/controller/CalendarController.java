@@ -30,10 +30,19 @@ public class CalendarController {
 	@GetMapping("/calendar")
 	public String hello(@RequestParam("date") String date1, HttpServletRequest request) {
 
+		String aaa = "2";
+		System.out.println(aaa);
+
 		/*	@RequestMapping("/calendar")
 			String index(HttpServletRequest request, Model model) {*/
 
+		/*		String testYear = "2020";
+
+				session.setAttribute("year", testYear);*/
+
 		    	User user = (User) session.getAttribute("user");
+		    	String year = (String) session.getAttribute("year");
+		    	Integer numYear = Integer.parseInt(year);
 
 		String testDate = date1 + "-01";
 
@@ -45,7 +54,7 @@ public class CalendarController {
 
 		System.out.println("Date型 =>" + numMonth);
 
-		int clickedYear = 2020;
+		int clickedYear = numYear;
 		int clickedMonth = numMonth;
 
 		Calendar cal = Calendar.getInstance();
@@ -62,13 +71,18 @@ public class CalendarController {
 		Integer nowMonth = cal.get(Calendar.MONTH) + 1;
 		String.format("%02d", nowMonth);
 
-		System.out.println("2020-" + nowMonth + "-01");
-		System.out.println("2020-" + nowMonth + "-" + max);
+		System.out.println("year:"+year);
+
+		System.out.println(year+"-" + nowMonth + "-01");
+		System.out.println(year+"-" + nowMonth + "-" + max);
 
 		//date型にするためにStringで文字列作成（月初め）
-		String DayStart = "2020-" + nowMonth + "-01";
+		String DayStart = year+"-" + nowMonth + "-01";
 		//date型にするためにStringで文字列作成（月末）
-		String DayEnd = "2020-" + nowMonth + "-" + max;
+		String DayEnd = year+"-" + nowMonth + "-" + max;
+
+		System.out.println(DayStart);
+		System.out.println(DayEnd);
 
 		//日付の文字列をdate型に変換
 		Date ds = Date.valueOf(DayStart);
@@ -204,7 +218,8 @@ public class CalendarController {
 
 		//  年が設定されていれば、その値を取得。そうでなければ、今年の年号を入れる
 		if (request.getParameter("year") == null) {
-			request.setAttribute("year", cal.get(Calendar.YEAR)); //  現在の年
+//			request.setAttribute("year", cal.get(Calendar.YEAR)); //  現在の年
+			request.setAttribute("year", year); //  現在の年
 
 		} else {
 			request.setAttribute("year", request.getParameter("year")); //  現在の年
@@ -217,12 +232,12 @@ public class CalendarController {
 			System.out.println("checkTheMonth2");
 			request.setAttribute("month", request.getParameter("month")); //  与えらられた月
 		}
-		int year = Integer.parseInt(request.getAttribute("year").toString());
+		int yearForCalendar = Integer.parseInt(request.getAttribute("year").toString());
 		int month = Integer.parseInt(request.getAttribute("month").toString());
 
 		System.out.println("month:" + month);
 		// 月初めの曜日(日-> 1)
-		cal.set(year, month - 1, 1);
+		cal.set(yearForCalendar, month - 1, 1);
 		startday = cal.get(Calendar.DAY_OF_WEEK);
 		// 月末の日付
 		//		cal.add(Calendar.MONTH, 1);
@@ -249,7 +264,7 @@ public class CalendarController {
 
 				if ((date == day[date])) {
 
-					sb.append("<td>" + "<a href = \"dairyData?date=2020-" + String.format("%02d", month) + "-"
+					sb.append("<td>" + "<a href = \"dairyData?date="+year+"-" + String.format("%02d", month) + "-"
 							+ String.format("%02d", date) + "\">" + date + "</a>"
 							+ "<br>" + "支出：" + dayMoney[date] +"円"+"</td>");
 				} else {

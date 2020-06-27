@@ -24,18 +24,25 @@
 </head>
 <body>
 
-	<h1>日データ修正完了</h1>
 
+	 <div id="header">
+            <p class="systemNameTitle headerIcon"><span id="systemName">スーテェー簿</span></p>
+            <a href = "logout"><span class="headerBtn headerIcon label label-info">ログアウト</span></a>
+     </div>
+
+	<h2 class="">日データ修正完了</h2>
+	<br>
  		<h3>${inputDate}</h3>
-
+		<br>
 
 
 			<div>
-			${inputDate}日の項目金額の修正が完了しました。
+			<p class="center2">${inputDate}日の項目金額の修正が完了しました。</p>
 			</div>
-
-			<a href="dairyData?date=${inputDate}">日データ閲覧画面へ</a>
-
+			<br>
+			<div class="center2">
+			<a href="dairyData?date=${inputDate}" class="btn btn-primary btn-lg center2" id="mainBtn">日データ閲覧画面へ</a>
+			</div>
 <%--  			<form:hidden path = "inputDate" value = "${inputDate}" />
 			<form:button>
 

@@ -17,32 +17,30 @@ public class NoticeMonthServiceImpl implements NoticeMonthService{
 	private NoticeMonthDao noticeMonthDao;
 
 
-	public List<MonthSum> monthDataSum(int usersId){
-		List<MonthSum> list = noticeMonthDao.monthDateIncomeSpending(usersId);
+	@Override
+	public List<MonthSum> monthDataSum(int usersId,String year){
+		List<MonthSum> list = noticeMonthDao.monthDateIncomeSpending(usersId,year);
 		return list;
 	}
 
-
-
-
 	//1年の収入合計
 	@Override
-	public int monthSumIncome(int usersId) {
-		List<MonthSum> list = noticeMonthDao.monthSum(usersId);
+	public int monthSumIncome(int usersId,String year) {
+		List<MonthSum> list = noticeMonthDao.monthSum(usersId,year);
 		return list.get(0).getMonthIncomeSum();
 	}
 
 	//1年の支出合計
 	@Override
-	public int monthSumSpending(int usersId) {
-		List<MonthSum> list = noticeMonthDao.monthSum(usersId);
+	public int monthSumSpending(int usersId,String year) {
+		List<MonthSum> list = noticeMonthDao.monthSum(usersId,year);
 		return list.get(0).getMonthSpendingSum();
 	}
 
-	//1年の支出合計
+	//1年の差額合計
 	@Override
-	public int monthSumIncomeSpendingDifference(int usersId) {
-		List<MonthSum> list = noticeMonthDao.monthSum(usersId);
+	public int monthSumIncomeSpendingDifference(int usersId,String year) {
+		List<MonthSum> list = noticeMonthDao.monthSum(usersId,year);
 		return list.get(0).getMonthIncomeSpendingDifferenceSum();
 	}
 

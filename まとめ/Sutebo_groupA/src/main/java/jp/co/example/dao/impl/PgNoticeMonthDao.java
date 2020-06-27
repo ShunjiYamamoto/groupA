@@ -19,7 +19,7 @@ public class PgNoticeMonthDao implements NoticeMonthDao{
 	private NamedParameterJdbcTemplate jdbcTemplate;
 
 	@Override
-	public List<MonthSum> monthDateIncomeSpending(int usersId){
+	public List<MonthSum> monthDateIncomeSpending(int usersId,String year){
 
 		String sql ="select s.month_date,coalesce(month_income,0) month_income, coalesce(month_spending,0) month_spending,coalesce(month_income_spending_difference,0) month_income_spending_difference from " +
 				"(select '01' month_date " +
@@ -65,7 +65,7 @@ public class PgNoticeMonthDao implements NoticeMonthDao{
 				"	 end) month_income_spending_difference " +
 				"from money m " +
 				"join items i on m.items_id = i.items_id  " +
-				"where input_date between '2020/01/01' and '2020/12/31' " +
+				"where input_date between to_date( :year ||'/01/01','YYYY/MM/DD') and to_date( :year ||'/12/31','YYYY/MM/DD') " +
 				"and users_id = :usersId " +
 				"group by substr(to_char(input_date, 'YYYYMMDD'), 5, 2)) t " +
 				" " +
@@ -73,6 +73,7 @@ public class PgNoticeMonthDao implements NoticeMonthDao{
 				"order by month_date";
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("usersId", usersId);
+		param.addValue("year", year);
 
 		List<MonthSum> resultList =jdbcTemplate.query(sql,param,new BeanPropertyRowMapper<MonthSum>(MonthSum.class));
 
@@ -80,7 +81,7 @@ public class PgNoticeMonthDao implements NoticeMonthDao{
 	}
 
 	@Override
-	public List<MonthSum> monthSum(int usersId){
+	public List<MonthSum> monthSum(int usersId,String year){
 
 		String sql ="select coalesce(month_income_sum,0) month_income_sum ,coalesce(month_spending_sum,0) month_spending_sum,coalesce(month_income_spending_difference_sum,0)month_income_spending_difference_sum  " +
 				"from "+
@@ -102,11 +103,12 @@ public class PgNoticeMonthDao implements NoticeMonthDao{
 				"		end)month_income_spending_difference_sum " +
 				"from money m  " +
 				"join items i on m.items_id = i.items_id " +
-				"where input_date between '2020/01/01' and '2020/12/31' " +
+				"where input_date between to_date( :year ||'/01/01','YYYY/MM/DD') and to_date( :year ||'/12/31','YYYY/MM/DD') " +
 				"and users_id = :usersId ) h ";
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("usersId", usersId);
+		param.addValue("year", year);
 
 		List<MonthSum> resultList =jdbcTemplate.query(sql,param,new BeanPropertyRowMapper<MonthSum>(MonthSum.class));
 
