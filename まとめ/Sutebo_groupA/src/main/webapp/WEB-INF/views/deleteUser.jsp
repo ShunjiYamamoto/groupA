@@ -7,9 +7,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<link href="./css/process.css" rel="stylesheet">
 <title>ユーザー削除</title>
 </head>
 <body>
+	<div id="header">
+		<p class="systemNameTitle headerIcon">
+			<span id="systemName">スーテェー簿</span>
+		</p>
+		<a href="setting"><span class="headerBtn headerIcon btn-lg">戻る</span></a>
+		<a href="logout"><span
+			class="headerBtn headerIcon btn-lg">ログアウト</span></a>
+	</div>
 
 	<div style="text-align: center">
 		<h2>ユーザー削除</h2>
@@ -18,15 +32,15 @@
 
 		<form:form action="userDateAllDelete" modelAttribute="delete">
 			<p>
-				<div>パスワード：<form:input path="password" type="password"/><b style= color:red>${passwordChange}</b>
-				<form:errors path="password" cssStyle="color: red"/></div>
+			<div>
+				パスワード：
+				<form:input path="password" type="password" />
+				<b style="color: red">${passwordChange}</b>
+				<form:errors path="password" cssStyle="color: red" />
+			</div>
 			</p>
-			<form:button>削除</form:button>
+			<form:button class="btn btn-primary btn-lg" id="mainBtn">削除</form:button>
 		</form:form>
-
-		<p>
-			<a href="setting" >戻る</a>
-		</p>
 	</div>
 
 </body>

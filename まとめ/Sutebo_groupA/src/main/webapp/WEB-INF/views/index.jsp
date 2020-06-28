@@ -34,8 +34,8 @@
                 </p>
             </div>
             <div id="topBtn">
-                <a href="login" id="mainBtn" class="btn btn-info">ログイン画面</a>
-                <a href="createAccount" id="createAccount" class="btn btn-info">アカウント作成</a>
+                <a href="login" id="mainBtn" class="btn btn btn-primary">ログイン画面</a>
+                <a href="createAccount" id="createAccount" class="btn btn btn-primary">アカウント作成</a>
             </div>
         </div>
     </div>

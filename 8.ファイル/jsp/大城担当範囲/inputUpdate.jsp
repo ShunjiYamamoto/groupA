@@ -33,11 +33,11 @@
 		<c:if test="${not empty a}">
 			<form:form action="userUpdateName" modelAttribute="name">
 				<p>
-					<div>
-						ユーザー名：
-						<form:input path="userName" type="text" />
-						<form:errors path="userName" cssStyle="color: red" />
-					</div>
+				<div>
+					ユーザー名：
+					<form:input path="userName" type="text" />
+					<form:errors path="userName" cssStyle="color: red" />
+				</div>
 				</p>
 				<form:button class="btn btn-primary btn-lg" id="mainBtn">修正</form:button>
 			</form:form>
@@ -46,16 +46,19 @@
 		<c:if test="${not empty b}">
 			<form:form action="userUpdatePass" modelAttribute="pass">
 				<p>
-					<div>
-						&emsp;&emsp;&emsp;&emsp;&emsp;パスワード：<form:input path="pass" type="password" />
-						<form:errors path="pass" cssStyle="color: red" />
-					</div>
+				<div>
+					&emsp;&emsp;&emsp;&emsp;&emsp;パスワード：
+					<form:input path="pass" type="password" />
+					<form:errors path="pass" cssStyle="color: red" />
+				</div>
 
-					<br>
-					<div>パスワード（再確認）：<form:input path="newPass" type="password" />
-						<b style="color: red">${passwordChange}</b>
-						<form:errors path="newPass" cssStyle="color: red" />
-					</div>
+				<br>
+				<div>
+					パスワード（再確認）：
+					<form:input path="newPass" type="password" />
+					<b style="color: red">${passwordChange}</b>
+					<form:errors path="newPass" cssStyle="color: red" />
+				</div>
 				</p>
 				<form:button class="btn btn-primary btn-lg" id="mainBtn">修正</form:button>
 			</form:form>
