@@ -28,7 +28,7 @@
 	<div style="text-align: center">
 		<h2>ユーザー削除</h2>
 
-		ユーザー情報と家計簿のデータを全て削除できます。<br> パスワードを入力し、削除ボタンを押してください。<br>
+		<b>ユーザー情報と家計簿のデータを全て削除できます。<br> パスワードを入力し、削除ボタンを押してください。<br></b>
 
 		<form:form action="userDateAllDelete" modelAttribute="delete">
 			<p>

@@ -35,10 +35,13 @@
 	<div class=”bg-opacity”>
 
 		<div id="header">
-			<p class="systemNameTitle">
+			<p class="systemNameTitle headerIcon">
 				<span id="systemName">スーテェー簿</span>
 			</p>
+			<a href="index"><span
+				class="headerBtn headerIcon label label-info">戻る</span></a>
 		</div>
+
 
 		<h2>ログイン画面</h2>
 
@@ -68,7 +71,8 @@
 
 
 						<li><form:button class="btn btn-primary" id="mainBtn">ログイン</form:button>
-							<a href="index" class="btn btn-primary" id="backBtn">戻る</a></li>
+
+<!-- 									<a href="index" class="btn btn-primary" id="backBtn">戻る</a></li> -->
 					</ul>
 				</fieldset>
 			</form:form>

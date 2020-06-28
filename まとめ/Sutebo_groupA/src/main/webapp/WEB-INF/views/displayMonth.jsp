@@ -23,18 +23,11 @@ pageEncoding="UTF-8"%>
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
-<link href="./css/index.css" rel="stylesheet">
+<!-- <link href="./css/index.css" rel="stylesheet"> -->
 <link href="./css/displayMonth.css" rel="stylesheet">
     <title>月表示</title>
-    <style>
-        .border {
-            width: 100px;
-            padding: 10px;
-            margin: 20px;
-        }
-    </style>
+
 </head>
-<!-- width="500" cellspacing="0" cellpading="5" -->
 <body>
 
         <div id="header">
@@ -45,8 +38,7 @@ pageEncoding="UTF-8"%>
         </div>
 
     <h2>${year}年</h2>
-    <div class="border border-solid">
-    <table class = "tableForDisplayMonth" border="1" width="500" cellspacing="0" cellpading="5">
+    <table border="1" width="500" cellspacing="0" cellpading="5" align = "center">
     	<thead class="tableTitle">
 			<tr>
 				<th>月</th>
@@ -76,7 +68,6 @@ pageEncoding="UTF-8"%>
     </tbody>
   </table>
 
-    </div>
 <!--     <div>
         <button type="button"><a href = "menu">戻る</a></button>
 

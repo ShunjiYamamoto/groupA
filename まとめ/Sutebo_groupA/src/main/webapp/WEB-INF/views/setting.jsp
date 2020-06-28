@@ -20,11 +20,15 @@
 </head>
 <body>
 
-	 <div id="header">
-     	<p class="systemNameTitle headerIcon"><span id="systemName">スーテェー簿</span></p>
-	</div>
-		<br>
-		<h1 class="left">設定</h1>
+		<div id="header">
+			<p class="systemNameTitle headerIcon">
+				<span id="systemName">スーテェー簿</span>
+			</p>
+			<a href="menu"><span
+				class="headerBtn headerIcon label label-info">戻る</span></a>
+		</div>
+
+		<h2>設定</h2>
 		<br>
 
 		<div class="main">
@@ -34,7 +38,7 @@
 			<p><a href="inputUpdateName" class="btn btn-primary btn-lg" id="mainBtn">ユーザー名変更</a></p>
 			<p><a href="inputUpdatePass" class="btn btn-primary btn-lg" id="mainBtn">パスワード変更</a></p>
 			<p><a href="deleteUser" class="btn btn-primary btn-lg" id="mainBtn">ユーザー削除</a></p>
-			<p><a href="menu"  class="btn btn-primary btn-lg" id="mainBtn">戻る</a></p>
+<!-- 			<p><a href="menu"  class="btn btn-primary btn-lg" id="mainBtn">戻る</a></p> -->
 
 	</div>
 
