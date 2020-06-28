@@ -18,9 +18,15 @@
 	crossorigin="anonymous">
 
 <link href="./css/index.css" rel="stylesheet">
+<link href="./css/process.css" rel="stylesheet">
 <title>日データ修正画面</title>
 </head>
 <body>
+
+	<div id="header">
+            <p class="systemNameTitle headerIcon"><span id="systemName">スーテェー簿</span></p>
+            <a href = "logout"><span class="headerBtn headerIcon label label-info">ログアウト</span></a>
+        </div>
 
 
 	<h2>日データ修正</h2>
@@ -28,9 +34,9 @@
 
 	<h3>${inputDate}</h3>
 
-	<c:if test="${not empty errorMsg}">
-		<p style="color: red">${errorMsg}</p>
-	</c:if>
+  <c:if test="${not empty errorMsg}">
+    <p style=color:red class="main">${errorMsg}</p>
+  </c:if>
 
 	<form:form action="completeFixMoney" method="post"
 		modelAttribute="fixMoneyForm">
@@ -58,7 +64,7 @@
 		<form:button>確定</form:button>
 
 	</form:form>
-	<a href="dairyData?date=${inputDate}">戻る</a>
+	<p class="main"><a href="dairyData?date=${inputDate}">戻る</a></p>
 
 
 

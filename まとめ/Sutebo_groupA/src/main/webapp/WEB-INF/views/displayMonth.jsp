@@ -47,7 +47,7 @@ pageEncoding="UTF-8"%>
     <h2>${year}年</h2>
     <div class="border border-solid">
     <table class = "tableForDisplayMonth" border="1" width="500" cellspacing="0" cellpading="5">
-    	<thead>
+    	<thead class="tableTitle">
 			<tr>
 				<th>月</th>
 				<th>収入</th>
@@ -66,7 +66,7 @@ pageEncoding="UTF-8"%>
 			</c:forEach>
 				<thead>
 			<tr>
-				<th>合計</th>
+				<th class="tableTitle">合計</th>
 				<th>${incomeSum }円</th>
 				<th>${spendingSum }円</th>
 				<th>${differenceSum }円</th>

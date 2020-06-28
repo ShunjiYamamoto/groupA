@@ -8,15 +8,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="content.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<link href="./css/process.css" rel="stylesheet">
 <title>入力確認画面</title>
 </head>
 <body>
-	<h1>確認画面</h1>
-	<form:form action="completeMoneyInput" method="post"
-		modelAttribute="inputMoneyForm">
-		<table border="1" align="center">
-			<tr>
+	<div id="header">
+		<p class="systemNameTitle headerIcon">
+			<span id="systemName">スーテェー簿</span>
+		</p>
+		<a href="logout"><span class="headerBtn headerIcon btn-lg">ログアウト</span></a>
+	</div>
+	<h2>確認画面</h2>
+
+	<div class="main">
+		<form:form action="completeMoneyInput" method="post"
+			modelAttribute="inputMoneyForm">
+			<table border="1" align="center">
+				<tr>
 				<td>
 					<c:if test="${incomeOrOutgo == 2}">支出</c:if>
 					<c:if test="${incomeOrOutgo == 1}">収入</c:if>
@@ -27,20 +39,20 @@
 						hidden="true" /> ${moneyDateString}</td>
 			</tr>
 		</table>
-		<fieldset>
-			<table>
+		<br>
+			<table border="1" align="center">
 				<tr>
-					<td><label> <form:input type="hidden" path="itemsId"
+					<td><label style="text-align:center"> <form:input type="hidden" path="itemsId"
 								value="${moneyItemsId}" /> ${moneyItemName}
 					</label></td>
 					<td><form:input type="hidden" path="amount"
 							value="${moneyAmount}" disabled="readonly" />${moneyAmount}</td>
 				</tr>
 			</table>
-		</fieldset>
-		<button type="submit" name="insert">確認</button>
-		&ensp;&ensp;
-		<button type="submit" name="inputReturn">戻る</button>
-	</form:form>
+			<p></p>
+			<button type="submit" name="insert" class="btn btn-primary btn-lg">確認</button>
+			<button type="submit" name="inputReturn"
+				class="btn btn-primary btn-lg">戻る</button>
+		</form:form>
 </body>
 </html>

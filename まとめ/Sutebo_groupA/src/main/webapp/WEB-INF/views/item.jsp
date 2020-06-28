@@ -13,13 +13,16 @@
 
 <body>
 
-	<div class="back">
-		<a href="./menu">メニュー</a>
-		<a href="./inputMoney">戻る</a>
-	</div>
+    <div id="header">
+        <p class="systemNameTitle headerIcon"><span id="systemName">スーテェー簿</span></p>
+        <a class="headerBtn headerIcon label label-info" href = "logout" >ログアウト</a>
+		<a class="headerBtn headerIcon label label-info" href="./inputMoney">戻る</a>
+		<a class="headerBtn headerIcon label label-info" href="./menu">メニュー</a>
+    </div>
 
 	<h2>項目の編集</h2>
 
+	<div class="center2">
 	<c:choose>
 		<c:when test="${incomeOutgo == 1}">
 			<a href="/displayItemOutgo">支出</a>／収入
@@ -27,9 +30,10 @@
 		<c:when test="${incomeOutgo == 2}">
 			支出／<a href="/displayItemIncome">収入</a>
 		</c:when>
-	</c:choose>
+	</c:choose>]
+	</div>
 
-	<p>
+	<p class="center2">
 		<c:if test="${not empty deleteItemList}">
 			<form:form action="reInputItem" modelAttribute="reInputForm">
 				<form:select path="itemsId">
@@ -42,7 +46,7 @@
 		</c:if>
 	</p>
 
-	<p>
+	<p class="center2">
 		<form:form action="inputItem" modelAttribute="inputForm">
 			<form:input path="itemName" />
 			<form:button>追加</form:button><br>
@@ -51,9 +55,10 @@
 	</p>
 
 	<c:if test="${not empty inputMsg}">
-		${inputMsg}
+			<p class="center2">${inputMsg}</p>
 	</c:if>
 
+	<div class = "center2">
 	<c:choose>
 		<c:when test="${not empty itemList}">
 			<form:form action="confirmDeleteItem" modelAttribute="deleteForm">
@@ -77,10 +82,10 @@
 			削除した項目を再追加するか、項目を新たに追加してください。
 		</c:otherwise>
 	</c:choose>
-
+	</div>
 
 	<c:if test="${not empty deleteMsg}">
-		${deleteMsg}
+			<p class="center2">${deleteMsg}</p>
 	</c:if>
 
 </body>
