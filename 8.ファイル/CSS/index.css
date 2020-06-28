@@ -237,3 +237,43 @@ table{
 #inlineA{
 	display:inline-block;
 }
+
+.center{
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+.left{
+    margin-left: 33%;
+}
+
+#center{
+    margin-right: 50%;
+    margin-left: 12%; 
+    border: 1; 
+    width: 500;
+}
+
+#tableFM{
+    background-color: white;
+}
+
+.tableTitle{
+    background-color: rgb(249, 250, 182);
+}
+
+#center{
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+h3{
+    text-align: center;
+    margin: 30px auto;
+}
+
+.center2{
+    text-align: center;
+    align-items: center;
+}
+
