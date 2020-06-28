@@ -41,7 +41,7 @@
                 ${msg}<br>
 
                 <form:form action="confirm" modelAttribute="test2">
-                	<form:errors path="rePassword" cssStyle="color: red"/><br>
+                	<form:errors path="password" cssStyle="color: red"/><br>
            	 	</form:form>
 
             </div>
@@ -53,7 +53,7 @@
 			</form:form>
 
 			<form:form action="confirm" modelAttribute="test2">
-			Password確認：<form:password path="rePassword" /><br>
+			Password確認：<form:password path="password" /><br>
 
 			<form:button>送信</form:button>
 			</form:form>
