@@ -5,15 +5,15 @@ import javax.validation.constraints.Size;
 
 public class ConfirmPasswordForm {
 
-	@NotBlank
-	@Size(max=20)
-	private String rePassword;
+	@NotBlank(message="パスワードは必須です")
+	@Size(min=0,max=20,message="文字数は20文字以内です")
+	private String password;
 
-	public String getRePassword() {
-		return rePassword;
+	public String getPassword() {
+		return password;
 	}
-	public void setRePassword(String rePassword) {
-		this.rePassword = rePassword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

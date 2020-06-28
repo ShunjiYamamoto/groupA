@@ -5,16 +5,16 @@ import javax.validation.constraints.Size;
 
 public class AccountForm {
 
-	@NotBlank
-	@Size(max=20)
+	@NotBlank(message="ユーザーIDは必須です")
+	@Size(min=0,max=20,message="文字数は20文字以内です")
 	private String userId;
 
-	@NotBlank
-	@Size(max=20)
+	@NotBlank(message="ユーザー名は必須です")
+	@Size(min=0,max=20,message="文字数は20文字以内です")
 	private String userName;
 
-	@NotBlank
-	@Size(max=20)
+	@NotBlank(message="パスワードは必須です")
+	@Size(min=0,max=20,message="文字数は20文字以内です")
 	private String password;
 
 	public String getUserId() {

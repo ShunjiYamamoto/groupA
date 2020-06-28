@@ -85,9 +85,8 @@ public class AccountController {
 		String password = (String) session.getAttribute("password");  // 取得
 
 		if(bindingResult2.hasErrors()) {
-			System.out.println("通過");
 			return "confirmAccount";
-		}else if(form2.getRePassword().equals(password) != true) {
+		}else if(form2.getPassword().equals(password) != true) {
 			model.addAttribute("msg", "Passwordが間違っています");
 			return "confirmAccount";
 		}

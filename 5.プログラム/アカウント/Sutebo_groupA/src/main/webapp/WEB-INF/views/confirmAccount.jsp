@@ -41,19 +41,19 @@
                 ${msg}<br>
 
                 <form:form action="confirm" modelAttribute="test2">
-                	<form:errors path="rePassword" cssStyle="color: red"/><br>
+                	<form:errors path="password" cssStyle="color: red"/><br>
            	 	</form:form>
 
             </div>
 
-			<form:form action="confirm" modelAttribute="test">
-			ユーザーID：<form:input path="userId" disabled="true" value="${userId}"/><br>
-			ユーザー名：<form:input path="userName" disabled="true" value="${userName}"/><br>
-			Password：<form:input path="password" disabled="true" type="password" value="${password}"/><br>
-			</form:form>
+			<form action="confirm">
+			ユーザーID：<input disabled value="${userId}"/><br>
+			ユーザー名：<input disabled value="${userName}"/><br>
+			Password：<input disabled type="password" value="${password}"/><br>
+			</form>
 
 			<form:form action="confirm" modelAttribute="test2">
-			Password確認：<form:password path="rePassword" /><br>
+			Password確認：<form:password path="password" /><br>
 
 			<form:button>送信</form:button>
 			</form:form>
