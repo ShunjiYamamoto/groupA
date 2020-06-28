@@ -29,23 +29,25 @@
 
 	<h2>記入忘れ防止用通知</h2>
 
-	<p class="info">
-		<span class="infobold">忘れ防止用通知の登録手順</span><br> 1.Line
-		Nofityにログインする<br> 2.マイページからトークンの発行を行う<br> ※トークルームは「1:1でLINE
-		Notifyから通知を受け取る」を選択<br> 3.発行されたトークンをコピーする<br>
-		4.トークンを指定した入力フォームにペーストする<br> 5.時間を入力して保存を行う<br>
-
-	</p>
-
-	<p>
-		発行されたトークンを入力してください。
+	<div class="news">
+		<p id="notice">忘れ防止用通知の登録手順</p>
+		<p class = "text">1.LineNofityにログインする。</p>
+		<p class = "text">2.マイページからトークンの発行を行う。</p>
+		<p class = "text">※トークルームは「1:1でLINENotifyから通知を受け取る」を選択</p>
+		<p class = "text">3.発行されたトークンをコピーする。</p>
+		<p class = "text">4.トークンを指定した入力フォームにペーストする。</p>
+		<p class = "text">5.時間を入力して保存を行う。</p>
+	</div>
+	    <p>発行されたトークンを入力してください。</p>
 
 		<form:form action="line2" modelAttribute="test">
 			<p>
 				<form:input path="lineToken" value="${lineToken}" />
-				<br> ${msg_lineToken}
 			</p>
 
+			<c:if test="${not empty msg_lineToken}">
+			<center><b style = "color:red">${msg_lineToken}</b></center>
+			</c:if>
 			<p>通過をオンにすると、記入した時間に通知が送られます。</p>
 
 			<p>

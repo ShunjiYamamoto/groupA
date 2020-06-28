@@ -23,7 +23,7 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
-<link href="./css/index.css" rel="stylesheet">
+<link href="./css/dairyData.css" rel="stylesheet">
 <title>日データ閲覧</title>
 </head>
 <body>
@@ -31,9 +31,11 @@
 	<div class=”bg-opacity”>
 
 		<div id="header">
-			<p class="systemNameTitle">
+			<p class="systemNameTitle headerIcon">
 				<span id="systemName">スーテェー簿</span>
 			</p>
+						<a href="calendar?date=${year}-${datem}"><span
+				class="headerBtn headerIcon label label-info">戻る</span></a>
 		</div>
 
 		<h2>${dairyDate}</h2>
@@ -79,8 +81,6 @@
 				</c:if>
 
 			</form:form>
-			<a href="calendar?date=${year}-${datem}">戻る</a>
-
 
 			<table hidden>
 				<c:if test="${dairyDataForGraph != '0'}">

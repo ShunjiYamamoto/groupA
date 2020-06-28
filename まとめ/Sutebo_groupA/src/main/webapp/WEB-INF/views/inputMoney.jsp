@@ -28,7 +28,7 @@
 	<div align="center">
 
 		<h2>家計データ入力</h2>
-		<br> <br> <br>
+		<br>
 		<div style="color: red">
 			<c:if test="${not empty errorMsg }">${errorMsg}</c:if>
 		</div>
@@ -64,7 +64,7 @@
 		</div>
 		<p>
 			<form:form action="confirmMoney" modelAttribute="inputMoneyForm">
-				<div class="solidlineandcenterdiv">
+			<div class="news">
 					<form:errors path="itemsId" cssStyle="color:red" />
 					<p>
 						<label>日付</label>

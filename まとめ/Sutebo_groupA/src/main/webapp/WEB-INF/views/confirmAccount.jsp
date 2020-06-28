@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <!DOCTYPE html>
 <html>
@@ -26,35 +29,43 @@
 
 <div class=”bg-opacity”>
 
-        <div id="header">
-            <p class="systemNameTitle"><span id="systemName">スーテェー簿</span></p>
-        </div>
+		<div id="header">
+			<p class="systemNameTitle headerIcon">
+				<span id="systemName">スーテェー簿</span>
+			</p>
+			<a href="createAccount"><span
+				class="headerBtn headerIcon label label-info">戻る</span></a>
+		</div>
 
-        <h2>アカウント作成確認</h2>
+         <h2>アカウント作成確認画面</h2>
 
-		<h2>これでいいですか？</h2>
+		<h2>これでいいですか</h2>
 
         <div class="main">
 
             <div class="errorMsg">
 
-                ${msg}<br>
+				<c:if test="${not empty msg}">
+				<p>${msg}</p>
+				</c:if>
+
+                <form:form action="confirm" modelAttribute="test2">
+                	<p><form:errors path="password" cssStyle="color: red"/></p>
+           	 	</form:form>
 
             </div>
 
 			<form:form action="confirm" modelAttribute="test">
-			ユーザーID：<form:input path="userId" disabled="true" value="${userId}"/><br>
-			ユーザー名：<form:input path="userName" disabled="true" value="${userName}"/><br>
-			Password：<form:input path="password" disabled="true" type="password" value="${password}"/><br>
+			<p>ユーザーID：<form:input path="userId" disabled="true" value="${userId}"/></p>
+			<p>ユーザー名：<form:input path="userName" disabled="true" value="${userName}"/></p>
+			<p>パスワード：<form:input path="password" disabled="true" type="password" value="${password}"/></p>
 			</form:form>
 
 			<form:form action="confirm" modelAttribute="test2">
-			パスワード再確認：<form:password path="rePassword" /><br>
+			<p>パスワード確認：<form:password path="password" /></p>
 
-			<form:button>確定</form:button>
+			<p><form:button class="btn btn-primary" id="mainBtn">確定</form:button><p>
 			</form:form>
-
-			<a href="createAccount" >戻る</a>
 
     </div>
 </div>

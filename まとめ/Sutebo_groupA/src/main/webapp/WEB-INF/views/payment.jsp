@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/payment.css" rel="stylesheet">
     <title>支払い通知</title>
 </head>
 
 <body>
 
-    <div class="back">
-        <a href="./menu.html">メニュー</a>
-        <a href="./settei.html">戻る</a>
-    </div>
+	<div id="header">
+		<p class="systemNameTitle headerIcon">
+			<span id="systemName">スーテェー簿</span>
+		</p>
+		<a href="setting"><span class="headerBtn headerIcon btn-lg">戻る</span></a>
+		<a href="menu"><span class="headerBtn headerIcon btn-lg">メニュー</span></a>
+	</div>
 
     <h2>支払い通知設定</h2>
 

@@ -19,8 +19,8 @@
 		<p class="systemNameTitle headerIcon">
 			<span id="systemName">スーテェー簿</span>
 		</p>
-		<a href="menu"><span class="headerBtn headerIcon btn-lg">メニュー</span></a>
 		<a href="logout"><span class="headerBtn headerIcon btn-lg">ログアウト</span></a>
+		<a href="menu"><span class="headerBtn headerIcon btn-lg">メニュー</span></a>
 	</div>
 	<h2>${moneyDateFull}のデータを登録完了しました。</h2>
 	<br>

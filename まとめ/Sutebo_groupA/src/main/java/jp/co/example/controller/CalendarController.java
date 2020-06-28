@@ -265,10 +265,10 @@ public class CalendarController {
 				if ((date == day[date])) {
 
 					sb.append("<td>" + "<a href = \"dairyData?date="+year+"-" + String.format("%02d", month) + "-"
-							+ String.format("%02d", date) + "\">" + date + "</a>"
-							+ "<br>" + "支出：" + dayMoney[date] +"円"+"</td>");
+							+ String.format("%02d", date) + "\">" + "<b>"+date+"</b>" + "</a>"
+							+ "<br>" + "<b>支出：" + dayMoney[date] +"円</b>"+"</td>");
 				} else {
-					sb.append("<td>" + "<a href = \"dairyData\">" + date + "</a>" + "</td>");
+					sb.append("<td>" + "<a href = \"dairyData\">" + "<b>"+date+"</b>" + "</a>" + "</td>");
 
 				}
 				date++;

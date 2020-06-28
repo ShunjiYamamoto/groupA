@@ -86,7 +86,7 @@ public class AccountController {
 
 		if(bindingResult2.hasErrors()) {
 			return "confirmAccount";
-		}else if(form2.getRePassword().equals(password) != true) {
+		}else if(form2.getPassword().equals(password) != true) {
 			model.addAttribute("msg", "Passwordが間違っています");
 			return "confirmAccount";
 		}

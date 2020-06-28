@@ -35,13 +35,12 @@
 
 		<div class="main">
 
-
 			<div class="news">
 
 				<p id="notice">お知らせ</p>
 
 				<c:if test="${empty noticeList}">
-				お知らせはありません。
+				<b>お知らせはありません。</b>
 				</c:if>
 
 				<form action="deleteNoticeMonth" method="post">
