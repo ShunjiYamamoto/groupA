@@ -40,11 +40,11 @@ pageEncoding="UTF-8"%>
         <div id="header">
             <p class="systemNameTitle headerIcon"><span id="systemName">スーテェー簿</span></p>
 
-            <span class="headerBtn headerIcon label label-info"><a href = "displayYear">戻る</a></span>
+            <span class="headerBtn headerIcon label label-info"><a href = "menu">戻る</a></span>
 
         </div>
 
-    <h2>${year}年</h2>
+    ${year}年
     <div class="border border-solid">
     <table class = "tableForDisplayMonth" border="1" width="500" cellspacing="0" cellpading="5">
     	<thead>
@@ -58,7 +58,7 @@ pageEncoding="UTF-8"%>
 		<tbody>
 			<c:forEach var="date" items="${month1}">
 				<tr>
-					<td><a href = "calendar?date=${year}-${date.monthDate }">${date.monthDate}</a></td>
+					<td><a href = "calendar?date=2020-${date.monthDate }">${date.monthDate}</a></td>
 					<td>${date.monthIncome}円</td>
 					<td>${date.monthSpending}円</td>
 					<td>${date.monthIncomeSpendingDifference}円</td>

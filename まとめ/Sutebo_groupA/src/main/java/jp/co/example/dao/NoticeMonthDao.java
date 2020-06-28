@@ -7,9 +7,9 @@ import jp.co.example.entity.NoticeMonth;
 
 public interface NoticeMonthDao {
 
-	public List<MonthSum> monthDateIncomeSpending(int usersId);
+	public List<MonthSum> monthDateIncomeSpending(int usersId,String year);
 
-	public List<MonthSum> monthSum(int usersId);
+	public List<MonthSum> monthSum(int usersId,String year);
 
 	void inputNoticeMonth(NoticeMonth noticeMonth);
 

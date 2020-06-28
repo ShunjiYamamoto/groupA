@@ -18,7 +18,7 @@
 	<br>
 		<!-- 使用不可の可能性があるためコメントアウト
 		<button type="submit" name="displayMonth">月ごと表示</button> -->
-		<a href="displayMonth" >${moneyDateYearAndMonth}の月ごと表示</a>
+		<a href="displayMonth?date=${year}" >${moneyDateYearAndMonth}の月ごと表示</a>
 	<br>
 		<!-- 使用不可の可能性があるためコメントアウト
 		<button type="submit" name="dairyData">日ごと表示</button> -->

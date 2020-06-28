@@ -60,7 +60,7 @@
 					<a href="inputMoney" class="btn btn-primary btn-lg" id="mainBtn">記入</a>
 				</p>
 				<p>
-					<a href="displayMonth" class="btn btn-primary btn-lg" id="mainBtn">閲覧</a>
+					<a href="displayYear" class="btn btn-primary btn-lg" id="mainBtn">閲覧</a>
 				</p>
 				<p>
 					<a href="setting" class="btn btn-primary btn-lg" id="mainBtn">設定</a>

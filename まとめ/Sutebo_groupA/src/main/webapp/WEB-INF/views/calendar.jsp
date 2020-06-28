@@ -34,7 +34,7 @@
         <div id="header">
             <p class="systemNameTitle headerIcon"><span id="systemName">スーテェー簿</span></p>
 
-            <span class="headerBtn headerIcon label label-info"><a href = "displayMonth">戻る</a></span>
+            <span class="headerBtn headerIcon label label-info"><a href = "displayMonth?date=${year}">戻る</a></span>
             <span class="headerBtn headerIcon label label-info"><a href = "menu">メニュー</a></span>
         </div>
 

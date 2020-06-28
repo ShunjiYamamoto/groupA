@@ -16,12 +16,14 @@ public class NoticeMonthServiceImpl implements NoticeMonthService{
 	@Autowired
 	private NoticeMonthDao noticeMonthDao;
 
-
 	@Override
 	public List<MonthSum> monthDataSum(int usersId,String year){
 		List<MonthSum> list = noticeMonthDao.monthDateIncomeSpending(usersId,year);
 		return list;
 	}
+
+
+
 
 	//1年の収入合計
 	@Override
@@ -37,7 +39,7 @@ public class NoticeMonthServiceImpl implements NoticeMonthService{
 		return list.get(0).getMonthSpendingSum();
 	}
 
-	//1年の差額合計
+	//1年の支出合計
 	@Override
 	public int monthSumIncomeSpendingDifference(int usersId,String year) {
 		List<MonthSum> list = noticeMonthDao.monthSum(usersId,year);
