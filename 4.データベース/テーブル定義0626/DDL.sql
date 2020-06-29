@@ -1,6 +1,15 @@
 --suteboデータベース作成
 CREATE DATABASE sutebo;
 
+DROP TABLE users;
+DROP TABLE items;
+DROP TABLE notices_month;
+DROP TABLE notices_month_setting;
+DROP TABLE money;
+
+DELETE FROM users WHERE user_id = 'user' 
+
+
 --usersテーブル作成
 CREATE TABLE users(
 users_id		SERIAL 		PRIMARY KEY,
