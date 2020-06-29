@@ -45,8 +45,8 @@
 
 				<form action="deleteNoticeMonth" method="post">
 					<c:forEach items="${noticeList}" var="notice">
-						<fmt:formatDate value="${notice.noticeDate}" pattern="yyyy年MM月dd日" />に<br>
-						${notice.content}の支払いがありました。
+						<b><fmt:formatDate value="${notice.noticeDate}" pattern="yyyy年MM月dd日" />に<br>
+						${notice.content}の支払いがありました。</b>
 						<button name="noticeId" value="${notice.noticesMonthId}">削除</button>
 						<br>
 					</c:forEach>

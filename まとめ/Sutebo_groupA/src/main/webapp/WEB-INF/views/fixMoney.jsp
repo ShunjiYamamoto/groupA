@@ -63,7 +63,7 @@
 		<br>
 		<form:hidden path="inputDate" value="${inputDate}" />
 		<form:hidden path="itemName" value="${ItemName}" />
-		<center><form:button class="btn btn-primary btn-lg">確定</form:button></center>
+		<center><form:button class="btn btn-primary btn-lg" >確定</form:button></center>
 
 	</form:form>
 
