@@ -36,6 +36,7 @@
 			</p>
 						<a href="calendar?date=${year}-${datem}"><span
 				class="headerBtn headerIcon label label-info">戻る</span></a>
+				<span class="headerBtn headerIcon label label-info"><a href = "menu">メニュー</a></span>
 		</div>
 
 		<h2>${dairyDate}</h2>
@@ -77,7 +78,7 @@
 				<form:hidden path="inputDate" value="${date}" />
 
 				<c:if test="${dairyMoney != '0'}">
-					<form:button>修正</form:button>
+					<center><form:button class="btn btn-primary btn-lg">修正</form:button></center>
 				</c:if>
 
 			</form:form>

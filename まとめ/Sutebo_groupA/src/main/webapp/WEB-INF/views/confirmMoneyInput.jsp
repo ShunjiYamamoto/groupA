@@ -49,7 +49,7 @@
 				</tr>
 			</table>
 			<p></p>
-			<center><button type="submit" name="insert" class="btn btn-primary btn-lg">確認</button></center>
+			<center><button type="submit" name="insert" class="btn btn-primary btn-lg">確定</button></center>
 			<!-- 			<button type="submit" name="inputReturn"
 				class="btn btn-primary btn-lg">戻る</button> -->
 		</form:form>
