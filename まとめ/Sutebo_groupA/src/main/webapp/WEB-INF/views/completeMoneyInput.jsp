@@ -24,11 +24,14 @@
 	</div>
 	<h2>${moneyDateFull}のデータを登録完了しました。</h2>
 	<br>
-	<br>
 	<p class="center">
 	<form action="moneyDirect" method="post">
-		<p>
+<!-- 		<p>
 			<button type="submit" name="menu" class="btn btn-primary btn-lg">メニュー</button>
+		</p> -->
+				<p>
+			<button type="submit" name="inputReturn"
+				class="btn btn-primary btn-lg">記入</button>
 		</p>
 		<!-- 使用不可の可能性があるためコメントアウト
 			<button type="submit" name="displayMonth">月ごと表示</button> -->
@@ -41,10 +44,7 @@
 			<a href="dairyData?date=${moneyDateTypeInsert}"
 				class="btn btn-primary btn-lg">${moneyDateMonthAndDate}の日ごと表示</a>
 		</p>
-		<p>
-			<button type="submit" name="inputReturn"
-				class="btn btn-primary btn-lg">記入</button>
-		</p>
+
 	</form>
 
 </body>

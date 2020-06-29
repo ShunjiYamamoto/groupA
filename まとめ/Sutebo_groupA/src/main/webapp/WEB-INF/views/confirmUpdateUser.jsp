@@ -26,7 +26,7 @@
 		</div>
 
 	<div style="text-align: center">
-		<h2>ユーザー情報を修正しました</h2>
+		<h2>ユーザー情報を修正しました。</h2>
 
 		<p>
 			<c:if test="${not empty c}">
