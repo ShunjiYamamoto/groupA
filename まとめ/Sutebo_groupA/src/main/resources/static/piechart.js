@@ -1,6 +1,6 @@
 var itemName = document.getElementsByClassName("itemName");
 var amount = document.getElementsByClassName("amount");
-var color = ["#0000FF", "#000080","#008080","#008000","#00FF00","#00FFFF","#FFFF00","#FF0000","#FF00FF","#808000","#800080","#800000"];
+var color = ["#0000FF", "#000080","#008080","#008000","#00FF00","#00FFFF","#FFFF00","#FF0000","#FF00FF","#808000","#800080","#800000","#BAD3FF","#5507FF","#CBFFD3","#00FF3B","#FFFF88","#FFBEDA","#FFBBFF","#E4FF8D","#BA55D3","	#A0522D"];
 
 /*console.log ( itemName[0].textContent );
 console.log ( Number(amount[0].textContent) );*/
