@@ -1,0 +1,223 @@
+﻿# A5:ER FORMAT:13
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=items
+LName=項目
+Comment=
+TableOption=
+Page=Main
+Left=100
+Top=500
+Field="項目管理ID","items_id","integer","NOT NULL",0,"nextval(\qitems_items_id_seq\q::regclass)","",$FFFFFFFF,""
+Field="ユーザー管理ID","users_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="項目名","item_name","character varying(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="収支","income_outgo","integer","NOT NULL",,"","1なら収入、2なら支出",$FFFFFFFF,""
+Field="項目削除フラグ","item_delete","boolean","NOT NULL",,"false","TRUEなら項目を表面的に削除",$FFFFFFFF,""
+Index=items_users_id_item_name_key=2,users_id,item_name
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",100,500
+ZOrder=8
+
+[Entity]
+PName=money
+LName=金額
+Comment=
+TableOption=
+Page=Main
+Left=100
+Top=800
+Field="金額管理ID","money_id","integer","NOT NULL",0,"nextval(\qmoney_money_id_seq\q::regclass)","",$FFFFFFFF,""
+Field="日付","input_date","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="項目管理ID","items_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="金額","amount","integer","NOT NULL",,"","",$FFFFFFFF,""
+Index=money_input_date_items_id_key=2,input_date,items_id
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",100,800
+ZOrder=7
+
+[Entity]
+PName=notices_month
+LName=月別通知
+Comment=
+TableOption=
+Page=Main
+Left=500
+Top=800
+Field="月別通知管理ID","notices_month_id","integer","NOT NULL",0,"nextval(\qnotices_month_notices_month_id_seq\q::regclass)","",$FFFFFFFF,""
+Field="日付","notice_date","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="月別通知設定管理ID","notices_month_setting_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="通知削除フラグ","notice_delete","boolean","NOT NULL",,"false","TRUEなら通知を表面的に削除",$FFFFFFFF,""
+Index=notices_month_notice_date_notices_month_setting_id_key=2,notice_date,notices_month_setting_id
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",500,800
+ZOrder=6
+
+[Entity]
+PName=notices_month_setting
+LName=月別通知設定
+Comment=
+TableOption=
+Page=Main
+Left=500
+Top=500
+Field="月別通知設定管理ID","notices_month_setting_id","integer","NOT NULL",0,"nextval(\qnotices_month_setting_notices_month_setting_id_seq\q::regclass)","",$FFFFFFFF,""
+Field="ユーザー管理ID","users_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="通知日","notice_day","integer","NOT NULL",,"","1から28なら1日～28日、29なら月末",$FFFFFFFF,""
+Field="内容","content","character varying(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="通知オン","notice_on","boolean","NOT NULL",,"true","TRUEなら月別通知を実行",$FFFFFFFF,""
+Field="通知設定削除フラグ","notice_setting_delete","boolean","NOT NULL",,"false","TRUEなら通知設定を表面的に削除",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",500,500
+ZOrder=5
+
+[Entity]
+PName=users
+LName=ユーザー
+Comment=
+TableOption=
+Page=Main
+Left=100
+Top=100
+Field="ユーザー管理ID","users_id","integer","NOT NULL",0,"nextval(\qusers_users_id_seq\q::regclass)","",$FFFFFFFF,""
+Field="ユーザーID","user_id","character varying(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ユーザー名","user_name","character varying(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","password","character varying(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ユーザー削除フラグ","user_delete","boolean","NOT NULL",,"false","TRUEならユーザーを表面的に削除",$FFFFFFFF,""
+Field="最終ログイン日","last_login_date","date",,,"","月別通知の生成に使用",$FFFFFFFF,""
+Field="LINEトークン","line_token","character varying(60)",,,"","",$FFFFFFFF,""
+Field="LINE通知時間","line_time","time without time zone",,,"","",$FFFFFFFF,""
+Field="LINE通知オン","line_notice_on","boolean",,,"","TRUEならLINE通知を実行",$FFFFFFFF,""
+Field="LINE通知送信日","line_day","date",,,"","",$FFFFFFFF,""
+Index=users_user_id_key=2,user_id
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",100,100
+ZOrder=4
+
+[Relation]
+Entity1=users
+Entity2=notices_month_setting
+RelationType1=1
+RelationType2=3
+Fields1=users_id
+Fields2=users_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,500,9500,440,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=50
+Bar2=950
+Bar3=44
+TermPos1=R
+TermPos2=R
+ZOrder=1
+
+[Relation]
+Entity1=notices_month_setting
+Entity2=notices_month
+RelationType1=1
+RelationType2=3
+Fields1=notices_month_setting_id
+Fields2=notices_month_setting_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,500,9500,750,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=50
+Bar2=950
+Bar3=75
+TermPos1=R
+TermPos2=R
+ZOrder=0
+
+[Relation]
+Entity1=users
+Entity2=items
+RelationType1=1
+RelationType2=3
+Fields1=users_id
+Fields2=users_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,500,9500,647,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=50
+Bar2=950
+Bar3=65
+TermPos1=R
+TermPos2=R
+ZOrder=3
+
+[Relation]
+Entity1=items
+Entity2=money
+RelationType1=1
+RelationType2=3
+Fields1=items_id
+Fields2=items_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,500,9500,414,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=50
+Bar2=950
+Bar3=41
+TermPos1=R
+TermPos2=R
+ZOrder=2
