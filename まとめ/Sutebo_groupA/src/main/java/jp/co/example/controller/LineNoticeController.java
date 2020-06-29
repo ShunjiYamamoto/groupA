@@ -64,7 +64,7 @@ public class LineNoticeController {
 	@RequestMapping("/line2")
 	public String lineCheck(@ModelAttribute("test") LineNoticeForm form, Model model) {
 
-		String userId = (String) session.getAttribute("userId");  // 取得
+		User user = (User) session.getAttribute("user");  // 取得
 
 		//日付フォーマットの設定
 		SimpleDateFormat sdf2 = new SimpleDateFormat("HH");
@@ -103,7 +103,14 @@ public class LineNoticeController {
 				date = calendar.getTime();
 			}
 
-			int a = UserService.update(userId,form.getLineToken(),form.getHour(),form.getMinute(),form.getLineNoticeOn(),date);
+			System.out.println(user.getUserId());
+			System.out.println(form.getLineToken());
+			System.out.println(form.getHour());
+			System.out.println(form.getMinute());
+			System.out.println(form.getLineNoticeOn());
+
+
+			int a = UserService.update(user.getUserId(),form.getLineToken(),form.getHour(),form.getMinute(),form.getLineNoticeOn(),date);
 		}
 
 		return "lineNotice";
