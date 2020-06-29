@@ -17,31 +17,33 @@
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
 
-<link href="./css/index.css" rel="stylesheet">
-<link href="./css/process.css" rel="stylesheet">
+<link href="./css/fixMoney.css" rel="stylesheet">
 <title>日データ修正画面</title>
 </head>
 <body>
 
 	<div id="header">
-            <p class="systemNameTitle headerIcon"><span id="systemName">スーテェー簿</span></p>
-            <a href = "logout"><span class="headerBtn headerIcon label label-info">ログアウト</span></a>
-        </div>
+		<p class="systemNameTitle headerIcon">
+			<span id="systemName">スーテェー簿</span>
+		</p>
+		<a href="dairyData?date=${inputDate}"><span class="headerBtn headerIcon label label-info">戻る</span></a>
+		<a href="logout"><span class="headerBtn headerIcon label label-info">ログアウト</span></a>
+	</div>
 
 
 	<h2>日データ修正</h2>
 
 
-	<h3>${inputDate}</h3>
+	<center><h3>${inputDate}</h3></center>
 
-  <c:if test="${not empty errorMsg}">
-    <p style=color:red class="main">${errorMsg}</p>
-  </c:if>
+	<c:if test="${not empty errorMsg}">
+		<center><p style="color: red">${errorMsg}</p></center>
+	</c:if>
 
 	<form:form action="completeFixMoney" method="post"
 		modelAttribute="fixMoneyForm">
 
-		<table border="1">
+		<table>
 			<tr>
 				<th>項目</th>
 				<th>金額</th>
@@ -52,8 +54,8 @@
 				<tr>
 					<td>${ItemName}</td>
 					<td>${amount}</td>
-					<td><form:input path="amount" />
-						<form:errors path="amount" cssStyle="color: red" /></td>
+					<td><form:input path="amount" /> <form:errors path="amount"
+							cssStyle="color: red" /></td>
 				</tr>
 			</tbody>
 		</table>
@@ -61,10 +63,10 @@
 		<br>
 		<form:hidden path="inputDate" value="${inputDate}" />
 		<form:hidden path="itemName" value="${ItemName}" />
-		<form:button>確定</form:button>
+		<center><form:button class="btn btn-primary btn-lg">確定</form:button></center>
 
 	</form:form>
-	<p class="main"><a href="dairyData?date=${inputDate}">戻る</a></p>
+
 
 
 

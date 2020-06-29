@@ -31,17 +31,15 @@
      </div>
 
 	<h2 class="">日データ修正完了</h2>
-	<br>
- 		<h3>${inputDate}</h3>
-		<br>
+ 		<center><h3>${inputDate}</h3></center>
 
 
 			<div>
-			<p class="center2">${inputDate}日の項目金額の修正が完了しました。</p>
+			<center><p><b style = "font-size:large;">${inputDate}日の項目金額の修正が完了しました。</b></p></center>
 			</div>
 			<br>
 			<div class="center2">
-			<a href="dairyData?date=${inputDate}" class="btn btn-primary btn-lg center2" id="mainBtn">日データ閲覧画面へ</a>
+			<center><a href="dairyData?date=${inputDate}" class="btn btn-primary btn-lg center2" id="mainBtn">日データ閲覧画面へ</a></center>
 			</div>
 <%--  			<form:hidden path = "inputDate" value = "${inputDate}" />
 			<form:button>
